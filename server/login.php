@@ -10,5 +10,37 @@
         Email: <?php echo $_POST["email"]; ?><br>
         Senha: <?php echo $_POST["senha"]; ?><br>
     </p>
+    
+    <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "usbw";
+        $dbname = "workers";
+
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+        if (!$conn) {
+            die("Falha na conexao: " . mysqli_connect_error());
+        }
+
+        $email = mysqli_real_escape_string($conn, $_POST["email"]);
+        $senha = mysqli_real_escape_string($conn, $_POST["senha"]);
+
+        $sql = "SELECT * FROM usuario_comum WHERE email = '$email' AND senha = '$senha'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            
+            $usuario = $result->fetch_assoc();
+            $_SESSION["id_usuario"] = $usuario["id_usuario"];
+            $_SESSION["nome"] = $usuario["nome"];
+            echo "Login realizado com sucesso. Bem-vindo, " . $usuario["nome"] . "!";
+            
+        } else {
+            echo "Email ou senha incorretos.";
+        }
+
+        $conn->close();
+    ?>
 </body>
 </html>
