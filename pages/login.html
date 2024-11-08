@@ -7,12 +7,17 @@
 </head>
 <body>
     <section>
-        <h1>Login</h1>
+        <h2>Login</h2>
         <form action="/server/login.php" method="POST">
-            <input type="email" name="email" placeholder="Email:">
-            <input type="password" name="senha" placeholder="Senha:">
+            <label for="email">Email:</label>
+            <input type="email" name="email"><br>
+            <br>
+            <label for="pwd">Senha:</label>
+            <input type="password" name="senha"><br>
+            <br>
             <a href="esqueceusuasenha.html">Esquececeu sua senha?</a>
-            <a href="cadastrodeusuario.html">É novo por aqui?</a>
+            <a href="cadastrodeusuario.html">É novo por aqui?</a><br>
+            <br>
             <input type="submit" value="Entrar">
         </form>
     </section>
