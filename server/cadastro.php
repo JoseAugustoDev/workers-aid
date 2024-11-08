@@ -17,7 +17,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "usbw";
-        $dbname = "workers";
+        $dbname = "dados";
 
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -30,7 +30,7 @@
         $senha = mysqli_real_escape_string($conn, $_POST["senha"]);
         $endereco = mysqli_real_escape_string($conn, $_POST["endereco"]);
 
-        $sql = "INSERT INTO usuario_comum (nome, email, senha, endereco) VALUES ('$nome', '$email', '$senha', '$endereco')";
+        $sql = "INSERT INTO clientes (nome, email, senha, endereco) VALUES ('$nome', '$email', '$senha', '$endereco')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Inserido com sucesso";
