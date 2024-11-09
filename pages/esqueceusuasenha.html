@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Redefinição de Senha</title>
 </head>
+
 <body>
-    <section>
-        <h2>Redefinição de Senha</h2>
-        <form action="/server/login.php" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" name="email"><br>
-            <br>
-            <label for="pwd">Redefinir senha:</label>
-            <input type="password" name="redefinirsenha"><br>
-            <br>
-            <label for="pwd">Confirmação da senha:</label>
-            <input type="password" name="confirmaçãodasenha"><br>
-            <br>
-            <input type="submit" value="Redefinir">
-        </form>
-    </section>
+    <div class="container">
+        <section>
+            <h1>Redefinição de Senha</h1>
+            <div class="esqueceu_senha">
+                <form action="/server/login.php" method="POST">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email"><br>
+                    <br>
+                    <label for="pwd">Redefinir senha:</label>
+                    <input type="password" name="redefinirsenha"><br>
+                    <br>
+                    <label for="pwd">Confirmação da senha:</label>
+                    <input type="password" name="confirmaçãodasenha"><br>
+                    <br>
+                    <input type="submit" value="Redefinir">
+                </form>
+            </div>
+        </section>
+    </div>
 </body>
+
 </html>
