@@ -8,10 +8,11 @@
 <body>
     <section>
         <h2>Redefinição de Senha</h2>
-        <form action="/server/login.php" method="POST">
+        <form action="/server/reset_senha.php" method="POST">
             <input type="email" name="email" placeholder="Email:">
-            <input type="password" name="redefinirsenha" placeholder="Redefinir senha:">
-            <input type="password" name="confirmaçãodasenha" placeholder="Confirmação da senha:">
+            <input type="password" name="senhaAntiga" placeholder="Senha Antiga">
+            <input type="password" name="senhanova" placeholder="Redefinir senha:">
+            <input type="password" name="confirmacaodasenha" placeholder="Confirmação da senha:">
             <input type="submit" value="Redefinir">
         </form>
     </section>
