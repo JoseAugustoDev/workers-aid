@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Login</title>
 </head>
+
 <body>
     <section>
         <h2>Login</h2>
@@ -21,5 +24,26 @@
             <input type="submit" value="Entrar">
         </form>
     </section>
+
+    <div class="container">
+        <section>
+            <h1>Login</h1>
+            <p>Seja Bem-Vindo</p>
+
+            <div class="login">
+                
+                <form action="/server/login.php" method="POST">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email">
+                    <label for="pwd">Senha:</label>
+                    <input type="password" name="senha">
+                    <a href="esqueceusuasenha.html">Esquececeu sua senha?</a>
+                    <a href="cadastrodeusuario.html">É novo por aqui?</a>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </section>
+    </div>
 </body>
+
 </html>
