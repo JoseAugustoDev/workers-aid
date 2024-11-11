@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h1>Worker's Aid</h1>
-        <a href="pages/cadastro.html">Cadastro de Usuário</a><br>
+        <a href="pages/cadastrodeusuario.html">Cadastro de Usuário</a><br>
         <a href="pages/login.html">Login</a>
     </div>
 </body>
