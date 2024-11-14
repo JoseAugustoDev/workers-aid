@@ -9,37 +9,28 @@
 </head>
 
 <body>
-    <section>
-        <h2>Redefinição de Senha</h2>
-        <form action="/server/reset_senha.php" method="POST">
-            <input type="email" name="email" placeholder="Email:">
-            <input type="password" name="senhaAntiga" placeholder="Senha Antiga">
-            <input type="password" name="senhanova" placeholder="Redefinir senha:">
-            <input type="password" name="confirmacaodasenha" placeholder="Confirmação da senha:">
-            <input type="submit" value="Redefinir">
-        </form>
-    </section>
-=======
     <div class="container">
         <section>
             <h1>Redefinição de Senha</h1>
             <div class="esqueceu_senha">
-                <form action="/server/login.php" method="POST">
+                <form action="/server/reset_senha.php" method="POST">
                     <label for="email">Email:</label>
-                    <input type="email" name="email"><br>
+                    <input type="email" name="email" placeholder="Email:">
                     <br>
-                    <label for="pwd">Redefinir senha:</label>
-                    <input type="password" name="redefinirsenha"><br>
+                    <label for="senhaAntiga">Senha Atual:</label>
+                    <input type="password" name="senhaAntiga" placeholder="Senha Atual">
                     <br>
-                    <label for="pwd">Confirmação da senha:</label>
-                    <input type="password" name="confirmacaodasenha"><br>
+                    <label for="senhanova">Digite a nova senha:</label>
+                    <input type="password" name="senhanova" placeholder="Redefinir senha:">
                     <br>
+                    <label for="confirmacaodasenha">Digite novamente:</label>
+                    <input type="password" name="confirmacaodasenha" placeholder="Confirmação da senha:">
+
                     <input type="submit" value="Redefinir">
                 </form>
             </div>
         </section>
     </div>
->>>>>>> eb1e3ffc0a89857f565cc8ec09d21f12cdc81f8d
 </body>
 
 </html>
