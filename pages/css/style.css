@@ -60,7 +60,7 @@ form > label, form > input, form > a{
 }
 
 section{
-    width: 30%;
+    width: 65%;
     height: 30%;
 }
 
@@ -127,24 +127,21 @@ hr {
 
 .texto{
     padding: 10%;
-    margin-left: 25%;
+    margin-left: 2%;
+    margin-right: 30%;
     font-size: 2rem;
     font-weight: bold;
-    word-spacing: 50%;
     text-align: left;
-    
-    
-    
 
 }
 
 .feedback{
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-content: center;
-    width: 250%;
+    width: 150%;
     position: relative;
-    top: 28rem;
+    top: 25rem;
 
 
 }
@@ -152,6 +149,11 @@ hr {
 .buscar{
     width: 50%;
 
+}
+
+.imagem{
+    position: relative;
+    width: 200%;
 }
 
 
