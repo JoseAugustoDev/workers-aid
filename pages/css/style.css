@@ -89,10 +89,13 @@ header{
     height: 20vh;
 }
 
-button {
+
+
+button{
     width: 100%;
     background-color: #608BC1;
     color: #ffff;
+    margin: 1rem;
 }
 
 form{
@@ -115,13 +118,13 @@ section{
 .cadastro{
     justify-items: center;
     align-items: center;
-    background-color: bisque;
+    background-color: #CBDCEB;
 }
 
 .esqueceu_senha{
     justify-items: center;
     align-items: center;
-    background-color: bisque;
+    background-color: #CBDCEB;
 }
 
 hr {
@@ -223,6 +226,8 @@ a{
     justify-content: center;
     width: 40%;
     height: 100%;
+a:hover{
+    color: #fa1d1d;
 }
 
 .imagem_tela_principal img {
