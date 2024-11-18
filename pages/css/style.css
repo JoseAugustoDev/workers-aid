@@ -5,6 +5,10 @@ h1{
     text-align: center;
 }
 
+body{
+    background-color: #CBDCEB;
+}
+
 p{
     font-family: "Raleway", sans-serif;
     text-align: center;
@@ -22,6 +26,50 @@ img{
     justify-content: center;  
     align-items: flex-start; 
 
+}
+#logo{
+    width: 8rem;
+    border-radius: 50%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#lupa{
+    width: 1rem;
+    height: 1rem;
+
+
+}
+
+.pesquisar{
+    width: 4%;
+    height: 4vh;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: transparent;
+}
+
+#buscar {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}   
+
+#buscador {
+    width: 50%;
+    height: 4vh;
+    outline: 0;
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 2rem;
 }
 
 .container{
@@ -60,7 +108,7 @@ form > label, form > input, form > a{
 }
 
 section{
-    width: 65%;
+    width: 100%;
     height: 30%;
 }
 
@@ -98,9 +146,13 @@ hr {
     position: sticky;
     top: 0;
     width: 100%;
-    
-    
-    
+
+}
+
+a{
+    text-decoration: none;
+	color:#608BC1;
+    font-size: 1.5rem;
 }
 
 
@@ -136,14 +188,22 @@ hr {
 }
 
 .feedback{
+    width: 100%;
+    height: 20vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 150%;
-    position: relative;
-    top: 25rem;
+    padding: 2rem;
+}
 
+.titulo-feedback h1{
+    float: left;
+}
 
+.conteudo-feedback {
+    display: flex;
+    padding: 1rem;
 }
 
 .buscar{
@@ -151,9 +211,63 @@ hr {
 
 }
 
-.imagem{
-    position: relative;
-    width: 200%;
+.principal {
+    width: 100%;
+    height: 80vh;
+    display: flex;
 }
 
+.imagem_tela_principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+}
 
+.imagem_tela_principal img {
+    width: 65%;
+    height: 100%;
+}
+
+.secundaria {
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-secundaria, .servicos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.texto-secundaria {
+    height: 30%;
+    font-size: 1.5rem;
+    font-weight:bold;
+    
+}
+
+.texto-secundaria p {
+    text-indent: 1rem;
+    text-align: justify;
+}
+
+.servicos {
+    height: 60%;
+}
+
+footer{	
+    display: flex;
+    min-height:50px;
+    margin-top:auto; 
+    color: rgb(255, 255, 255);
+    background:#608BC1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
