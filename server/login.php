@@ -15,7 +15,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "usbw";
-        $dbname = "dados";
+        $dbname = "workers";
 
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -35,6 +35,10 @@
             $_SESSION["id_cliente"] = $usuario["id_cliente"];
             $_SESSION["nome"] = $usuario["nome"];
             echo "Login realizado com sucesso. Bem-vindo, " . $usuario["nome"] . "!";
+
+            header("Location: /pages/index.html");
+
+            exit;
             
         } else {
             echo "Email ou senha incorretos.";

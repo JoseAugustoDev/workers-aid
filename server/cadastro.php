@@ -17,7 +17,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "usbw";
-        $dbname = "dados";
+        $dbname = "workers";
 
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -34,6 +34,10 @@
 
         if ($conn->query($sql) === TRUE) {
             echo "Inserido com sucesso";
+
+            header("Location: /pages/login.html");
+
+            exit;
         } else {
             echo "Erro: " . $sql . "<br>" . $conn->error;
         }
