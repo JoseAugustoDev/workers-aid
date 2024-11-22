@@ -75,7 +75,7 @@
     </form>
 
     <br><br>
-    <a href="perfil.php">Voltar para o perfil</a> <!-- Link para retornar ao perfil -->
+    <a href="perfil.php">Voltar para o perfil</a>
 
 </body>
 </html>
