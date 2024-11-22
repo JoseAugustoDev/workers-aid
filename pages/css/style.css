@@ -86,11 +86,12 @@ header{
 }
 
 .login{
+    width: 50%;
     justify-items: center;
     align-items: center;
     background-color: #CBDCEB;  
-    border: 2px black solid;
-    height: 20vh;
+    border: 1px black solid;
+    height: 22vh;
 }
 
 
@@ -160,7 +161,7 @@ a{
     font-family: "Merriweather", serif;
     text-decoration: none;
 	color:#608BC1;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 
@@ -290,7 +291,7 @@ footer{
 }
 
 .imglogin{
-    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;  
     align-items: flex-start;
@@ -298,3 +299,23 @@ footer{
     border-radius: 50%;
 }
 
+#imglogin {
+    width: 100%;
+    height: 15vh;
+}
+
+.container-login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

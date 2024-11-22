@@ -22,11 +22,9 @@
           <?php echo $_SESSION["nome"]; ?>!
      </h1>
 
+
      <h2>Informações do usuário:</h2>
      <ul>
-          <li>ID Cliente:
-               <?php echo $_SESSION["id_cliente"]; ?>
-          </li>
           <li>Nome:
                <?php echo $_SESSION["nome"]; ?>
           </li>
