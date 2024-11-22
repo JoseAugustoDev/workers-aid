@@ -21,6 +21,7 @@
      <h1>Olá,
           <?php echo $_SESSION["nome"]; ?>!
      </h1>
+     
 
      <h2>Informações do usuário:</h2>
      <ul>

@@ -290,10 +290,6 @@ footer{
 }
 
 .imglogin{
-    height: 100%;
-    display: flex;
-    justify-content: center;  
-    align-items: flex-start;
     width: 8rem;
     border-radius: 50%;
 }

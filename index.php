@@ -10,7 +10,7 @@
         <h1>Worker's Aid</h1>
         <a href="pages/signup.html">Cadastro de Usuário</a><br>
         <a href="pages/login.html">Login</a><br>
-        <a href="pages/editar-perfil.html">Editar Perfil</a><br>
+        <a href="pages/editar-perfil.php">Editar Perfil</a><br>
     </div>
 </body>
 </html>
