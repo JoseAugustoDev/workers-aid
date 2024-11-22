@@ -1,0 +1,38 @@
+
+
+.descricao{
+    border: 1px solid black;
+    width: 90%;
+    height: 35vh;
+    display: flex;
+    font-size: 1.5rem;    
+
+}
+
+section{
+    width: 100%;
+}
+
+.titulo_info, h1{
+    text-decoration: none;
+	color:#608BC1;
+    font-size: 5rem;
+    text-align: center;
+    
+}
+
+*{
+    background-color: #CBDCEB;
+    margin: 5rem;
+}
+
+
+.voltar a{
+    text-decoration: none;
+    display: flex;
+    justify-content: right;
+    align-items:center;
+	color:#608BC1;
+    font-size: 1.5rem;
+
+}
