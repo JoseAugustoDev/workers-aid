@@ -13,31 +13,40 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Perfil</title>
+     <link rel="stylesheet" href="css/style3.css">
+     <title>Perfil Cliente</title>
 </head>
 
 <body>
+     <section class="fundo">
+          <div>
+               <h1>Olá,
+                    <?php echo $_SESSION["nome"]; ?>!
+               </h1>
+          
+               <h3>Informações do usuário:</h3>
+          </div>
 
-     <h1>Olá,
-          <?php echo $_SESSION["nome"]; ?>!
-     </h1>
-     
+          <div class="lista">
+               <ul>
+                    <li>Nome:
+                         <?php echo $_SESSION["nome"]; ?>
+                    </li>
+                    <li>Email:
+                         <?php echo $_SESSION["email"]; ?>
+                    </li>
+                    <li>Endereço:
+                         <?php echo $_SESSION["endereco"]; ?>
+                    </li>
+               </ul>
+          </div>
 
+     </section>
+          
+          <div>
+               <a href="editar-perfil.php">Editar Perfil</a>
+          </div>
 
-     <h2>Informações do usuário:</h2>
-     <ul>
-          <li>Nome:
-               <?php echo $_SESSION["nome"]; ?>
-          </li>
-          <li>Email:
-               <?php echo $_SESSION["email"]; ?>
-          </li>
-          <li>Endereço:
-               <?php echo $_SESSION["endereco"]; ?>
-          </li>
-     </ul>
-
-     <a href="editar-perfil.php">Editar Perfil</a>
 
 </body>
 
