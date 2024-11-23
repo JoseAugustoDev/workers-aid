@@ -1,10 +1,11 @@
 <?php
-    session_start(); 
-    
-    if (!isset($_SESSION['id_cliente'])) {
-        echo "Você não está logado.";
-        exit;
-    }
+session_start();
+
+if (!isset($_SESSION['id_cliente'])) {
+     echo "Você não está logado.";
+     exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
                <h1>Olá,
                     <?php echo $_SESSION["nome"]; ?>!
                </h1>
-          
+
                <h3>Informações do usuário:</h3>
           </div>
 
@@ -42,11 +43,14 @@
           </div>
 
      </section>
-          
-          <div>
-               <a href="editar-perfil.php">Editar Perfil</a>
-          </div>
 
+     <div>
+          <a href="editar-perfil-cliente.php">Editar Perfil</a>
+     </div>
+
+     <div>
+          <a href="/server/logout.php">Sair</a>
+     </div>
 
 </body>
 

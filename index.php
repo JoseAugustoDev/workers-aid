@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h1>Worker's Aid</h1>
-        <a href="pages/signup.html">Cadastro de Usuário</a><br>
+        <a href="pages/tipo-usuario.html">Cadastro de Usuário</a><br>
         <a href="pages/login.html">Login</a><br>
         <a href="pages/editar-perfil.php">Editar Perfil</a><br>
     </div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/style.css">
+     <title>Cadastro de Profissional</title>
+</head>
+
+<body>
+     <div class="container">
+          <img src="imgs/logo.jpg" alt="Logo">
+          <section>
+               <h1>Cadastro de Profissional</h1>
+               <div class="cadastro">
+                    <form action="/server/cadastro-profissional.php" method="POST" enctype="multipart/form-data">
+
+                         <label for="text">Nome:</label>
+                         <input type="text" name="nome" required>
+
+                         <label for="email">Email:</label>
+                         <input type="email" name="email" required>
+
+                         <label for="senha">Senha:</label>
+                         <input type="password" name="senha" required>
+
+                         <label for="senha-confirma">Confirme a Senha:</label>
+                         <input type="password" name="senha-confirma" required>
+
+                         <label for="endereco">Endereço:</label>
+                         <input type="text" name="endereco" required>
+
+                         <label for="voluntario">Gostaria de oferecer Trabalho Voluntário: <input type="checkbox"
+                                   name="voluntario"></label>
+
+                         <select name="servicos" id="categoria-servicos" required>
+                              <option value="">Selecione a categoria</option>
+                              <option value="Encanamento">Encanamento</option>
+                              <option value="Eletrica">Elétrica</option>
+                              <option value="Construcao Civil">Construção Civil</option>
+                              <option value="Marcenaria">Marcenaria</option>
+                              <option value="Piscina">Piscina</option>
+                              <option value="Faxina">Faxina</option>
+                         </select>
+
+                         <textarea name="desc" id="descricao" cols="30" rows="10">Forneça uma breve descrição</textarea>
+
+                         <label for="foto-perfil">Adicionar Foto de Perfil: <input type="file" name="foto-perfil"
+                                   id="foto-perfil"></label>
+
+                         <button type="submit">Cadastrar</button>
+
+                    </form>
+          </section>
+     </div>
+</body>
+
+</html>
