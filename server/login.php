@@ -25,7 +25,7 @@
         $_SESSION["nome"] = $usuario["nome"];
 
         
-        header("Location: /pages/index.html");
+        header("Location: ../index.html");
         
     } else {
         
