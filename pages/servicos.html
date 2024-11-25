@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Servicos</title>
-
+    <title>ServicÇs</title>
 </head>
+
 <body>
+
     <div class="tela_servico">
+
+        <!-- Cabeçalho com a logo e menu -->
         <header>
 
+            <!-- Logo do site -->
             <div class="logo">
                 <img src="imgs/Logo.jpg" id="logo" alt="Logo">
             </div>
@@ -18,8 +23,9 @@
             <!-- Começo do menu suspenso -->
             <nav class="menu_suspenso">
                 <ul>
+                    <!-- Itens do menu -->
                     <li class="li">
-                        <a href="servicos.html"> Serviços</a>
+                        <a href="servicos.html">Serviços</a>
                     </li>
                     <li class="li">
                         <a href="login.html">Sing in</a>
@@ -33,8 +39,10 @@
                 </ul>
             </nav>
 
+            <!-- Seção do perfil do usuário -->
             <div class="perfil">
                 <form action="/server/perfil.php" method="GET">
+                    <!-- Ícone de perfil -->
                     <button type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -47,18 +55,22 @@
             </div>
         </header>
 
+        <!-- Seção principal de conteúdo -->
         <section>
-            
-            <h1> Precisando de um profissional em [categoria]? Veja nossos profissionais destaques em [nome da categoria]  </h1>
-            
 
-            
+            <!-- Título principal da página, explicando sobre os profissionais -->
+            <h1>Precisando de um profissional em [categoria]? Veja nossos profissionais destaques em [nome da categoria]
+            </h1>
+
+            <!-- Seção de informações do perfil de um profissional -->
             <div class="info_de_perfil">
                 <ul>
                     <li>
+                        <!-- Imagem do perfil -->
                         <div class="img_perfil">
                             <img src="imgs/image.png" alt="imagem_de_perfil">
                         </div>
+                        <!-- Informações sobre o profissional -->
                         <p class="nome">Nome:</p>
                         <p class="email">E-mail:</p>
                         <p class="endereço">Endereço:</p>
@@ -68,4 +80,5 @@
         </section>
 
 </body>
+
 </html>

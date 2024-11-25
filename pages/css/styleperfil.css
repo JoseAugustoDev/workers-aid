@@ -1,11 +1,14 @@
+/* Importação das fontes */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-h1, h2{
+/* Estilo para os títulos h1 e h2 */
+h1, h2 {
     font-family: "Merriweather", serif;
-    text-align:justify;
+    text-align: justify;
 }
 
-body{
+/* Estilo para o corpo da página */
+body {
     height: 100vh;
     background-color: #F3F3E0;
     display: flex;
@@ -14,15 +17,16 @@ body{
     flex-direction: column;
 }
 
-
-.lista{
+/* Estilo para a lista */
+.lista {
     background-color: #608BC1;
     border: 1px black solid;
     width: 50%;
     height: 30vh;
 }
 
-.fundo{
+/* Estilo para a seção de fundo */
+.fundo {
     border: 1px black solid;
     flex-direction: column;
     width: 100%;
@@ -34,18 +38,21 @@ body{
     background-color: #CBDCEB;
 }
 
-a:hover{
+/* Estilo para o efeito de hover nos links */
+a:hover {
     color: red;
 }
 
-ul{
+/* Estilo para as listas não ordenadas */
+ul {
     font-family: "Merriweather", serif;
-    text-align:justify;
+    text-align: justify;
 }
 
-a{
+/* Estilo para os links */
+a {
     font-family: "Merriweather", serif;
     text-decoration: none;
-	color:#608BC1;
+    color: #608BC1;
     font-size: 1.5rem;
 }

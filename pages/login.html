@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -9,22 +10,39 @@
 </head>
 
 <body>
+    <!-- Div principal que contém todo o conteúdo da página de login -->
     <div class="container-login">
+
+        <!-- Seção da imagem de logo -->
         <div class="imglogin">
             <img src="imgs/logo.jpg" id="imglogin" alt="Logo">
         </div>
+
+        <!-- Seção principal da página com o título e formulário de login -->
         <main>
             <h1>Login</h1>
             <p>Seja Bem-Vindo</p>
-            <div class="login">
 
+            <!-- Formulário de login -->
+            <div class="login">
+                <!-- Formulário que envia os dados para /server/login.php via método POST -->
                 <form action="/server/login.php" method="POST">
+
+                    <!-- Campo para inserir o email -->
                     <label for="email">Email:</label>
                     <input type="email" name="email" required>
+
+                    <!-- Campo para inserir a senha -->
                     <label for="pwd">Senha:</label>
                     <input type="password" name="senha" required>
-                    <a href="esqueceusuasenha.html">Esquececeu sua senha?</a>
+
+                    <!-- Link para recuperar senha esquecida -->
+                    <a href="esqueceusuasenha.html">Esqueceu sua senha?</a>
+
+                    <!-- Link para a página de tipo de usuário para novos usuários -->
                     <a href="tipo-usuario.html">É novo por aqui?</a>
+
+                    <!-- Botão de envio do formulário -->
                     <button type="submit">Entrar</button>
                 </form>
             </div>

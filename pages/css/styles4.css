@@ -1,12 +1,12 @@
-/* CSS para tipo de serviço */
-
+/* Reset de estilo para todos os elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a{
+/* Estilo para os links */
+a {
     display: flex;
     font-family: "Merriweather", serif;
     text-decoration: none;
@@ -15,12 +15,13 @@ a{
     justify-content: center;
 }
 
+/* Estilo para o corpo da página */
 body {
     background-color: #CBDCEB;
 }
 
-
-.buscar-servico, .prestar-servico{
+/* Estilo para os botões de buscar e prestar serviço */
+.buscar-servico, .prestar-servico {
     color: white;
     background-color: #608BC1;
     border: 1px solid black;
@@ -31,8 +32,8 @@ body {
     padding: 1rem;
 }
 
-
-.pag-buscador-de-servico{
+/* Estilo para a página do buscador de serviço */
+.pag-buscador-de-servico {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,4 +42,3 @@ body {
     width: 100%;
     flex-wrap: wrap;
 }
-
