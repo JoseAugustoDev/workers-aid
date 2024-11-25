@@ -10,32 +10,43 @@
 
 <body>
     <div class="container">
+        <!-- Imagem do logo -->
         <img src="imgs/logo.jpg" alt="Logo">
+
         <section>
             <h1>Cadastro de Usuário</h1>
             <div class="cadastro">
+                <!-- Formulário para cadastro -->
                 <form action="/server/cadastro-cliente.php" method="POST" enctype="multipart/form-data">
-
+                    <!-- Campo para nome do usuário -->
                     <label for="text">Nome:</label>
                     <input type="text" name="nome" required>
 
+                    <!-- Campo para email -->
                     <label for="email">Email:</label>
                     <input type="email" name="email" required>
 
+                    <!-- Campo para senha -->
                     <label for="senha">Senha:</label>
                     <input type="password" name="senha" required>
 
+                    <!-- Campo para confirmar a senha -->
                     <label for="senha-confirma">Confirme a Senha:</label>
                     <input type="password" name="senha-confirma" required>
 
+                    <!-- Campo para endereço -->
                     <label for="text">Endereço:</label>
                     <input type="text" name="endereco" required>
 
-                    <label for="foto-perfil">Adicionar Foto de Perfil: <input type="file" name="foto-perfil" id="foto-perfil"></label>
+                    <!-- Campo para adicionar foto de perfil -->
+                    <label for="foto-perfil">Adicionar Foto de Perfil:
+                        <input type="file" name="foto-perfil" id="foto-perfil">
+                    </label>
 
+                    <!-- Botão para enviar o formulário -->
                     <button type="submit">Cadastrar</button>
-
                 </form>
+            </div>
         </section>
     </div>
 </body>

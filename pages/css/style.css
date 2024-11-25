@@ -1,58 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Mitr:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Mitr:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
-
-
+/* Estilo para o título principal (h1) */
 h1 {
     font-family: "Audiowide", sans-serif;
     text-align: center;
 }
 
+/* Estilo para o corpo da página */
 body {
     background-color: #CBDCEB;
 }
 
+/* Estilo para o parágrafo de texto */
 p {
     font-family: "Raleway", sans-serif;
     text-align: center;
 }
 
+/* Resetando margens e preenchimentos de todos os elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo para imagens */
 img {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
 }
 
+/* Estilo específico para o logo */
 #logo {
     width: 8rem;
     border-radius: 50%;
-
 }
 
+/* Estilo para o cabeçalho */
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
+/* Estilo para a lupa (ícone de pesquisa) */
 #lupa {
     width: 1rem;
     height: 1rem;
-
-
 }
 
+/* Classe de botão de pesquisa */
 .pesquisar {
     width: 4%;
     height: 4vh;
@@ -62,6 +59,7 @@ header {
     background-color: transparent;
 }
 
+/* Container para a barra de pesquisa */
 #buscar {
     width: 100%;
     height: 10vh;
@@ -70,6 +68,7 @@ header {
     justify-content: space-evenly;
 }
 
+/* Estilo para o campo de input de pesquisa */
 #buscador {
     width: 50%;
     height: 4vh;
@@ -79,6 +78,7 @@ header {
     border-radius: 2rem;
 }
 
+/* Container principal que envolve a tela inteira */
 .container {
     width: 100%;
     height: 100vh;
@@ -88,6 +88,7 @@ header {
     background-color: #F3F3E0;
 }
 
+/* Estilo para o formulário de login */
 .login {
     width: 50%;
     display: flex;
@@ -98,8 +99,7 @@ header {
     height: 22vh;
 }
 
-
-
+/* Estilo para os botões */
 button {
     width: 100%;
     background-color: #608BC1;
@@ -107,6 +107,7 @@ button {
     margin: 1rem;
 }
 
+/* Estilo para os formulários em geral */
 form {
     width: 50%;
     display: flex;
@@ -115,12 +116,14 @@ form {
     flex-direction: column;
 }
 
+/* Estilo para os campos dentro do formulário */
 form>label,
 form>input,
 form>a {
     margin: 0.2rem;
 }
 
+/* Estilo para seções gerais */
 section {
     display: flex;
     justify-content: center;
@@ -129,6 +132,7 @@ section {
     height: 30%;
 }
 
+/* Estilo para o cadastro */
 .cadastro {
     width: 100%;
     display: flex;
@@ -137,12 +141,14 @@ section {
     background-color: #CBDCEB;
 }
 
+/* Estilo para a seção "Esqueceu a senha?" */
 .esqueceu_senha {
     justify-content: center;
     align-items: center;
     background-color: #CBDCEB;
 }
 
+/* Estilo para o separador horizontal (hr) */
 hr {
     display: block;
     margin-top: 0.5em;
@@ -153,11 +159,12 @@ hr {
     border-width: 1px;
 }
 
+/* Estilo para o container de feedback */
 .feedback {
     display: flex;
-
 }
 
+/* Estilo para o menu de navegação */
 .menu_suspenso {
     display: flex;
     align-content: flex-start;
@@ -165,9 +172,9 @@ hr {
     position: sticky;
     top: 0;
     width: 100%;
-
 }
 
+/* Estilo para os links de navegação */
 a {
     font-family: "Merriweather", serif;
     text-decoration: none;
@@ -175,28 +182,29 @@ a {
     font-size: 1rem;
 }
 
-
+/* Estilo para os itens do menu de navegação */
 .li {
     display: inline;
     margin-right: 10px;
     padding: 30px;
 }
 
+/* Estilo para a busca */
 #buscar {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2%;
-
 }
 
+/* Estilo para o texto informativo */
 .auxiliar {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
+/* Estilo para o texto principal */
 .texto {
     padding: 10%;
     margin-left: 2%;
@@ -204,9 +212,9 @@ a {
     font-size: 2rem;
     font-weight: bold;
     text-align: left;
-
 }
 
+/* Estilo para a área de feedback */
 .feedback {
     width: 100%;
     height: 20vh;
@@ -217,44 +225,50 @@ a {
     padding: 2rem;
 }
 
+/* Estilo para o título de feedback */
 .titulo-feedback h1 {
     float: left;
 }
 
+/* Estilo para o conteúdo de feedback */
 .conteudo-feedback {
     display: flex;
     padding: 1rem;
 }
 
+/* Estilo para a busca no feedback */
 .buscar {
     width: 50%;
-
 }
 
+/* Estilo para a seção principal da página */
 .principal {
     width: 100%;
     height: 80vh;
     display: flex;
 }
 
+/* Estilo para a imagem da tela principal */
 .imagem_tela_principal {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40%;
     height: 100%;
-
 }
 
+/* Estilo para os links com efeito de hover */
 a:hover {
     color: #fa1d1d;
 }
 
+/* Estilo para as imagens na tela principal */
 .imagem_tela_principal img {
     width: 65%;
     height: 100%;
 }
 
+/* Estilo para a seção secundária */
 .secundaria {
     width: 50%;
     height: 80vh;
@@ -262,31 +276,33 @@ a:hover {
     flex-direction: column;
 }
 
+/* Estilo para o texto e serviços na seção secundária */
 .texto-secundaria,
 .servicos {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-
 }
 
+/* Estilo para o texto secundário */
 .texto-secundaria {
     height: 30%;
     font-size: 1.5rem;
-
-
 }
 
+/* Estilo para os parágrafos na seção secundária */
 .texto-secundaria p {
     font-family: "Signika Negative", sans-serif;
     text-align: justify;
 }
 
+/* Estilo para os serviços na seção secundária */
 .servicos {
     height: 60%;
 }
 
+/* Estilo para o rodapé */
 footer {
     display: flex;
     min-height: 50px;
@@ -298,24 +314,24 @@ footer {
     justify-content: center;
 }
 
+/* Estilo para o título de informações */
 .titulo_info {
     background-color: #608BC1;
 }
 
+/* Estilo para a imagem do login */
 .imglogin {
     width: 8rem;
     border-radius: 50%;
 }
 
+/* Estilo para a imagem de login */
 #imglogin {
     width: 100%;
     height: 15vh;
-<<<<<<< HEAD
-    
-=======
->>>>>>> ad74d40651aa208c792913822c9d9cfa57a0ce98
 }
 
+/* Estilo para o container de login */
 .container-login {
     height: 100vh;
     display: flex;
@@ -324,6 +340,7 @@ footer {
     flex-direction: column;
 }
 
+/* Estilo para a página principal do login */
 main {
     width: 75%;
     display: flex;
@@ -332,25 +349,24 @@ main {
     flex-direction: column;
 }
 
+/* Estilo para o título principal na página de login */
 h1 {
     font-size: 2rem;
     margin: 2rem;
     font-family: "Signika Negative", sans-serif;
 }
 
+/* Estilo para as informações do perfil */
 .info_de_perfil p {
     margin: 1.5rem;
     width: 35%;
-
 }
 
+/* Estilo para a página "esqueceu a senha?" */
 .container-esqueceu-senha {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
-
-

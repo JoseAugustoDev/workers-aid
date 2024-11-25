@@ -10,20 +10,34 @@
 
 <body>
     <div class="container-esqueceu-senha">
-        
+
+        <!-- Imagem do logo -->
         <img src="imgs/logo.jpg" alt="Logo">
+
         <main>
             <h1>Redefinição de Senha</h1>
+
             <div class="esqueceu_senha">
+                <!-- Formulário para redefinir a senha -->
                 <form action="/server/reset_senha.php" method="POST">
+
+                    <!-- Campo para email -->
                     <label for="email">Email:</label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" required>
+
+                    <!-- Campo para senha atual -->
                     <label for="senhaAntiga">Senha Atual:</label>
-                    <input type="password" name="senhaAntiga">
+                    <input type="password" name="senhaAntiga" required>
+
+                    <!-- Campo para nova senha -->
                     <label for="senhanova">Digite a nova senha:</label>
-                    <input type="password" name="senhanova">
+                    <input type="password" name="senhanova" required>
+
+                    <!-- Campo para confirmar a nova senha -->
                     <label for="confirmacaodasenha">Digite novamente:</label>
-                    <input type="password" name="confirmacaodasenha">
+                    <input type="password" name="confirmacaodasenha" required>
+
+                    <!-- Botão para enviar o formulário -->
                     <button type="submit">Redefinir</button>
                 </form>
             </div>

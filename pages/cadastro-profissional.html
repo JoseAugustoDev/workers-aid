@@ -15,25 +15,32 @@
                <h1>Cadastro de Profissional</h1>
                <div class="cadastro">
                     <form action="/server/cadastro-profissional.php" method="POST" enctype="multipart/form-data">
-
+                         <!-- Campo Nome -->
                          <label for="text">Nome:</label>
                          <input type="text" name="nome" required>
 
+                         <!-- Campo Email -->
                          <label for="email">Email:</label>
                          <input type="email" name="email" required>
 
+                         <!-- Campo Senha -->
                          <label for="senha">Senha:</label>
                          <input type="password" name="senha" required>
 
+                         <!-- Campo Confirmar Senha -->
                          <label for="senha-confirma">Confirme a Senha:</label>
                          <input type="password" name="senha-confirma" required>
 
+                         <!-- Campo Endereço -->
                          <label for="endereco">Endereço:</label>
                          <input type="text" name="endereco" required>
 
-                         <label for="voluntario">Gostaria de oferecer Trabalho Voluntário: <input type="checkbox"
-                                   name="voluntario"></label>
+                         <!-- Campo Voluntário (Checkbox) -->
+                         <label for="voluntario">Gostaria de oferecer Trabalho Voluntário:
+                              <input type="checkbox" name="voluntario">
+                         </label>
 
+                         <!-- Seletor de Categoria de Serviços -->
                          <select name="servicos" id="categoria-servicos" required>
                               <option value="">Selecione a categoria</option>
                               <option value="Encanamento">Encanamento</option>
@@ -44,13 +51,16 @@
                               <option value="Faxina">Faxina</option>
                          </select>
 
+                         <!-- Campo de Descrição do Profissional -->
                          <textarea name="desc" id="descricao" cols="30" rows="10">Forneça uma breve descrição</textarea>
 
-                         <label for="foto-perfil">Adicionar Foto de Perfil: <input type="file" name="foto-perfil"
-                                   id="foto-perfil"></label>
+                         <!-- Campo para Foto de Perfil -->
+                         <label for="foto-perfil">Adicionar Foto de Perfil:
+                              <input type="file" name="foto-perfil" id="foto-perfil">
+                         </label>
 
+                         <!-- Botão de envio -->
                          <button type="submit">Cadastrar</button>
-
                     </form>
           </section>
      </div>
