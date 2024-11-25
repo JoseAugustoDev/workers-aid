@@ -55,7 +55,7 @@ if ($result2->num_rows > 0) {
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/style3.css">
+     <link rel="stylesheet" href="css/styleperfil.css">
      <title>Perfil Cliente</title>
 </head>
 
@@ -70,7 +70,7 @@ if ($result2->num_rows > 0) {
           </div>
 
           <div class="lista">
-               <ul>
+               <ul class="ul">
                     <li>Nome:
                          <?php echo $_SESSION["nome"]; ?>
                     </li>
