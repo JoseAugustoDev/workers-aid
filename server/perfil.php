@@ -34,7 +34,7 @@ if ($result_cliente->num_rows > 0) {
         header("Location: /pages/perfil-profissional.php");
 
     }  else {
-        header("Location: /pages/perfil.php");
+        header("Location: /pages/perfil-cliente.php");
 
     }
 
