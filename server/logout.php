@@ -5,6 +5,6 @@ session_unset();
 
 session_destroy();
 
-header("Location: /pages/login.html");
+header("Location: /pages/index.html");
 exit;
 ?>
