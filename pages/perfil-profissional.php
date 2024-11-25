@@ -60,14 +60,15 @@ if ($result2->num_rows > 0) {
 </head>
 
 <body>
-     <section class="fundo">
-          <div>
+     <div>
                <h1>Olá,
                     <?php echo $_SESSION["nome"]; ?>!
                </h1>
+     </div>
 
-               <h3>Informações do usuário:</h3>
-          </div>
+     <section class="fundo">
+
+          <h2>Informações do usuário:</h2>
 
           <div class="lista">
                <ul class="ul">
