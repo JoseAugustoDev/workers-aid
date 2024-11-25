@@ -1,52 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Mitr:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-h1{
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+
+h1 {
     font-family: "Audiowide", sans-serif;
     text-align: center;
 }
 
-body{
+body {
     background-color: #CBDCEB;
 }
 
-p{
+p {
     font-family: "Raleway", sans-serif;
     text-align: center;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-img{
+img {
     height: 100%;
     display: flex;
-    justify-content: center;  
-    align-items: flex-start; 
+    justify-content: center;
+    align-items: flex-start;
 
 }
-#logo{
+
+#logo {
     width: 8rem;
     border-radius: 50%;
+
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 
-#lupa{
+#lupa {
     width: 1rem;
     height: 1rem;
 
 
 }
 
-.pesquisar{
+.pesquisar {
     width: 4%;
     height: 4vh;
     border: 1px solid gray;
@@ -61,7 +68,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-}   
+}
 
 #buscador {
     width: 50%;
@@ -72,7 +79,7 @@ header{
     border-radius: 2rem;
 }
 
-.container{
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -81,24 +88,25 @@ header{
     background-color: #F3F3E0;
 }
 
-.login{
+.login {
+    width: 50%;
     justify-items: center;
     align-items: center;
-    background-color: #CBDCEB;  
-    border: 2px black solid;
-    height: 20vh;
+    background-color: #CBDCEB;
+    border: 1px black solid;
+    height: 22vh;
 }
 
 
 
-button{
+button {
     width: 100%;
     background-color: #608BC1;
     color: #ffff;
     margin: 1rem;
 }
 
-form{
+form {
     width: 50%;
     display: flex;
     align-items: center;
@@ -106,22 +114,27 @@ form{
     flex-direction: column;
 }
 
-form > label, form > input, form > a{
+form>label,
+form>input,
+form>a {
     margin: 0.2rem;
 }
 
-section{
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     height: 30%;
 }
 
-.cadastro{
+.cadastro {
     justify-items: center;
     align-items: center;
     background-color: #CBDCEB;
 }
 
-.esqueceu_senha{
+.esqueceu_senha {
     justify-items: center;
     align-items: center;
     background-color: #CBDCEB;
@@ -137,12 +150,12 @@ hr {
     border-width: 1px;
 }
 
-.feedback{
+.feedback {
     display: flex;
 
 }
 
-.menu_suspenso{
+.menu_suspenso {
     display: flex;
     align-content: flex-start;
     justify-content: center;
@@ -152,20 +165,21 @@ hr {
 
 }
 
-a{
+a {
+    font-family: "Merriweather", serif;
     text-decoration: none;
-	color:#608BC1;
-    font-size: 1.5rem;
+    color: #608BC1;
+    font-size: 1rem;
 }
 
 
-.li{
+.li {
     display: inline;
     margin-right: 10px;
     padding: 30px;
 }
 
-#buscar{
+#buscar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,14 +187,14 @@ a{
 
 }
 
-.auxiliar{
+.auxiliar {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.texto{
+.texto {
     padding: 10%;
     margin-left: 2%;
     margin-right: 30%;
@@ -190,7 +204,7 @@ a{
 
 }
 
-.feedback{
+.feedback {
     width: 100%;
     height: 20vh;
     display: flex;
@@ -200,7 +214,7 @@ a{
     padding: 2rem;
 }
 
-.titulo-feedback h1{
+.titulo-feedback h1 {
     float: left;
 }
 
@@ -209,7 +223,7 @@ a{
     padding: 1rem;
 }
 
-.buscar{
+.buscar {
     width: 50%;
 
 }
@@ -229,7 +243,7 @@ a{
 
 }
 
-a:hover{
+a:hover {
     color: #fa1d1d;
 }
 
@@ -245,23 +259,24 @@ a:hover{
     flex-direction: column;
 }
 
-.texto-secundaria, .servicos {
+.texto-secundaria,
+.servicos {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    
+
 }
 
 .texto-secundaria {
     height: 30%;
     font-size: 1.5rem;
-    font-weight:bold;
-    
+
+
 }
 
 .texto-secundaria p {
-    text-indent: 1rem;
+    font-family: "Signika Negative", sans-serif;
     text-align: justify;
 }
 
@@ -269,13 +284,64 @@ a:hover{
     height: 60%;
 }
 
-footer{	
+footer {
     display: flex;
-    min-height:50px;
-    margin-top:auto; 
+    min-height: 50px;
+    margin-top: auto;
     color: rgb(255, 255, 255);
-    background:#608BC1;
+    background: #608BC1;
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+.titulo_info {
+    background-color: #608BC1;
+}
+
+.imglogin {
+    width: 8rem;
+    border-radius: 50%;
+}
+
+#imglogin {
+    width: 100%;
+    height: 15vh;
+}
+
+.container-login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 2rem;
+    font-family: "Signika Negative", sans-serif;
+}
+
+.info_de_perfil p {
+    margin: 1.5rem;
+    width: 35%;
+
+}
+
+.container-esqueceu-senha {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }

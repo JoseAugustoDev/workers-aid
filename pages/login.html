@@ -9,23 +9,26 @@
 </head>
 
 <body>
-    <div class="container">
-        <img src="imgs/logo.jpg" alt="Logo">
-        <section>
+    <div class="container-login">
+        <div class="imglogin">
+            <img src="imgs/logo.jpg" id="imglogin" alt="Logo">
+        </div>
+        <main>
             <h1>Login</h1>
             <p>Seja Bem-Vindo</p>
             <div class="login">
+
                 <form action="/server/login.php" method="POST">
                     <label for="email">Email:</label>
                     <input type="email" name="email" required>
                     <label for="pwd">Senha:</label>
                     <input type="password" name="senha" required>
                     <a href="esqueceusuasenha.html">Esquececeu sua senha?</a>
-                    <a href="signup.html">É novo por aqui?</a>
+                    <a href="tipo-usuario.html">É novo por aqui?</a>
                     <button type="submit">Entrar</button>
                 </form>
             </div>
-        </section>
+        </main>
     </div>
 </body>
 

@@ -3,21 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Servicos</title>
 
-    <style>
-        .servicos{
-            border: 5x solid #000;
-            padding: 30px;
-        }
-        
-    </style>
 </head>
 <body>
-    <div class="servicos">
-        
+    <div class="tela_servico">
+        <header>
 
-    </div>
+            <div class="logo">
+                <img src="imgs/Logo.jpg" id="logo" alt="Logo">
+            </div>
+
+            <!-- Começo do menu suspenso -->
+            <nav class="menu_suspenso">
+                <ul>
+                    <li class="li">
+                        <a href="servicos.html"> Serviços</a>
+                    </li>
+                    <li class="li">
+                        <a href="login.html">Sing in</a>
+                    </li>
+                    <li class="li">
+                        <a href="cadastro-cliente.html">Sing up</a>
+                    </li>
+                    <li class="li">
+                        <a href="quemsomos.html">Quem somos</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="perfil">
+                <form action="/server/perfil.php" method="GET">
+                    <button type="submit">Ver perfil</button>
+                </form>
+            </div>
+        </header>
+
+        <section>
+            
+            <h1> Precisando de um profissional em [categoria]? Veja nossos profissionais destaques em [nome da categoria]  </h1>
+            
+
+            
+            <div class="info_de_perfil">
+                <ul>
+                    <li>
+                    <div class="img_perfil">
+                        <img src="" alt="imagem_de_perfil">
+                    </div>
+                    <p class="nome">Nome:</p>
+                    <p class="email">E-mail:</p>
+                    <p class="endereço">Endereço:</p>
+                    <hr>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
 </body>
 </html>
