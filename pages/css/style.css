@@ -23,7 +23,7 @@ p {
 }
 
 /* Estilo para imagens */
-img {
+.imagem_tela_principal img {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -357,9 +357,56 @@ h1 {
 }
 
 /* Estilo para as informações do perfil */
-.info_de_perfil p {
+.info-de-perfil p {
     margin: 1.5rem;
     width: 35%;
+}
+
+.info-de-perfil {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-de-perfil ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.info-de-perfil ul li {
+    width: 80%;
+    height: 20%;
+    display: flex;
+    border: 1px solid black;
+}
+
+.img-perfil {
+    display: flex;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 10%;
+}
+
+#foto-servico {
+    width: 100%;
+    height: 10%;
+}
+
+.prof-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
 }
 
 /* Estilo para a página "esqueceu a senha?" */

@@ -1,4 +1,7 @@
 <?php
+
+// Se o usuário ainda não estiver logado, não é pra redirecionar pra login
+
 session_start();
 
 $servername = "localhost";
