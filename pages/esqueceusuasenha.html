@@ -12,14 +12,14 @@
     <div class="container-esqueceu-senha">
 
         <!-- Imagem do logo -->
-        <img src="imgs/logo.jpg" alt="Logo">
+        <img id="logo-red-senha" src="imgs/logo.jpg" alt="Logo">
 
+        <h1>Redefinição de Senha</h1>
         <main>
-            <h1>Redefinição de Senha</h1>
 
             <div class="esqueceu_senha">
                 <!-- Formulário para redefinir a senha -->
-                <form action="/server/reset_senha.php" method="POST">
+                <form action="/server/reset_senha.php" method="POST" class="red-senha">
 
                     <!-- Campo para email -->
                     <label for="email">Email:</label>
@@ -38,7 +38,7 @@
                     <input type="password" name="confirmacaodasenha" required>
 
                     <!-- Botão para enviar o formulário -->
-                    <button type="submit">Redefinir</button>
+                    <button type="submit" id="but-red-senha">Redefinir</button>
                 </form>
             </div>
         </main>
