@@ -367,8 +367,7 @@ footer {
 
 /* Estilo para a página principal do login */
 main {
-    border: 1px solid black;
-    width: 50%;
+    width: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
