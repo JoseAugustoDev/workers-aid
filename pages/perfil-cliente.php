@@ -47,10 +47,8 @@ if (!isset($_SESSION['id_cliente'])) {
 
      <div>
           <a href="editar-perfil-cliente.php">Editar Perfil</a>
-     </div>
-
-     <div>
           <a href="/server/logout.php">Sair</a>
+          <a href="../index.html">Voltar para página inicial</a>
      </div>
 
 </body>

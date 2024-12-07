@@ -58,26 +58,37 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
+    <link rel="stylesheet" href="css/styleeditarperfil.css">
 </head>
 
 <body>
+    
     <h1>Editar Perfil</h1>
+    
+    <section>
 
-    <form action="editar-perfil-profissional.php" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
+        <img id="" src="imgs/logo.jpg" alt="Logo">
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
+        <div>
+            <form action="editar-perfil-profissional.php" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
 
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
 
-        <button type="submit">Atualizar Perfil</button>
-    </form>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
 
-    <br><br>
+                <button type="submit">Atualizar Perfil</button>
+            </form>
+        </div>
+
+    </section>
+
+    <div>
     <a href="perfil-profissional.php">Voltar para o perfil</a>
+    </div>
 
 </body>
 

@@ -58,26 +58,36 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
+    <link rel="stylesheet" href="css/styleeditarperfil.css">
+
 </head>
 
-<body>
-    <h1>Editar Perfil</h1>
+<body>   
 
-    <form action="editar-perfil-cliente.php" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
+    <h1>Editar perfil:</h1>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
+    <section>
 
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
+        <img id="imglogin" src="imgs/logo.jpg" alt="Logo"> 
 
-        <button type="submit">Atualizar Perfil</button>
-    </form>
+        <form action="editar-perfil-cliente.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
 
-    <br><br>
-    <a href="perfil-cliente.php">Voltar para o perfil</a>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
+
+            <button type="submit">Atualizar Perfil</button>
+        </form>
+
+    </section>
+
+    <div>
+        <a href="perfil-cliente.php">Voltar para o perfil</a>
+    </div>
 
 </body>
 
