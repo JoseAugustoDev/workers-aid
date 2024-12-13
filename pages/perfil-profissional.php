@@ -92,10 +92,10 @@ if ($result2->num_rows > 0) {
 
      </section>
 
-     <div>
+     <div class="edit">
           <a href="editar-perfil-profissional.php">Editar Perfil</a>
           <a href="/server/logout.php">Sair</a>
-          <a href="../index.html">Voltar para página inicial</a>
+          <a href="../index.php">Voltar para página inicial</a>
      </div>
      
 </body>

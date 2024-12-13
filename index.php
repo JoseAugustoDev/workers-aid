@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,10 +28,10 @@
                         <a href="/pages/servicos.html">Serviços</a>
                     </li>
                     <li class="li">
-                        <a href="/pages/login.html">Sing in</a>
+                        <a href="/pages/login.html">Sign In</a>
                     </li>
                     <li class="li">
-                        <a href="/pages/tipo-usuario.html">Sing up</a>
+                        <a href="/pages/tipo-usuario.html">Sign Up</a>
                     </li>
                     <li class="li">
                         <a href="/pages/quemsomos.html">Quem somos</a>
@@ -38,16 +42,32 @@
 
             <!-- Seção de Perfil do Usuário -->
             <div class="perfil">
-                <form action="/server/perfil.php" method="GET">
-                    <button type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg>
-                    </button>
-                </form>
+                <?php 
+
+                    if (isset($_SESSION['id_cliente'])) {
+                        echo "<form action='/server/perfil.php' method='GET'>
+                                <button type='submit'>
+                                    <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor'
+                                        class='bi bi-person-circle' viewBox='0 0 16 16'>
+                                        <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0' />
+                                        <path fill-rule='evenodd'
+                                            d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1' />
+                                    </svg>
+                                </button>
+                            </form>
+                            ";
+                    } else {
+                        echo "<a href='/pages/login.html'>
+                                <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor'
+                                    class='bi bi-person-circle' viewBox='0 0 16 16'>
+                                    <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0' />
+                                    <path fill-rule='evenodd'
+                                        d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1' />
+                                </svg>
+                            </a>
+                        ";
+                    }
+                ?>
             </div>
         </header>
         <!-- Fim do cabeçalho -->
@@ -108,14 +128,8 @@
                                         echo "<a href='/{$row['id_categoria']}'> <li class='item-categoria'>" . $row["nome_categoria"] . "</li></a>";
                                     }
                                 } else {
-                                    echo "0 results";
+                                    echo "Não há nada";
                                 }
-                                // echo "<li class='item-categoria'>Encanamento</li>";
-                                // echo "<li class='item-categoria'>Elétrica</li>";
-                                // echo "<li class='item-categoria'>Construção Cíivil</li>";
-                                // echo "<li class='item-categoria'>Marcenaria</li>";
-                                // echo "<li class='item-categoria'>Piscina</li>";
-                                // echo "<li class='item-categoria'>Faxina</li>";
                             ?>
                             </ul>
                         </div>

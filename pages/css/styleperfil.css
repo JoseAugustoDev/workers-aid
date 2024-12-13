@@ -56,3 +56,13 @@ a {
     color: #608BC1;
     font-size: 1.5rem;
 }
+
+.edit {
+    background-color: red;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
