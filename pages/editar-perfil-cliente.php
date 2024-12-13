@@ -63,14 +63,18 @@ mysqli_close($conn);
 </head>
 
 <body>   
+    
+    <div class="imgedp">
+        
+        <div>
+            <img id="imglogin" src="imgs/logo.jpg" alt="Logo"> 
+        </div>
+        
+        <h1>Editar perfil:</h1>
 
-    <h1>Editar perfil:</h1>
-
-    <section>
-
-        <img id="imglogin" src="imgs/logo.jpg" alt="Logo"> 
-
-        <form action="editar-perfil-cliente.php" method="POST">
+        <section>
+            
+            <form action="editar-perfil-cliente.php" method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
 
@@ -84,10 +88,12 @@ mysqli_close($conn);
         </form>
 
     </section>
-
+    
     <div>
         <a href="perfil-cliente.php">Voltar para o perfil</a>
     </div>
+    </div>
+
 
 </body>
 

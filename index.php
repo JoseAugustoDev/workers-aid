@@ -28,10 +28,10 @@
                         <a href="/pages/servicos.html">Serviços</a>
                     </li>
                     <li class="li">
-                        <a href="/pages/login.html">Sign In</a>
+                        <a href="/pages/login.html">Login</a>
                     </li>
                     <li class="li">
-                        <a href="/pages/tipo-usuario.html">Sign Up</a>
+                        <a href="/pages/tipo-usuario.html">Cadastro</a>
                     </li>
                     <li class="li">
                         <a href="/pages/quemsomos.html">Quem somos</a>

@@ -10,7 +10,7 @@ h1{
 /*Define cor de fundo do corpo*/
 body{
     height: 100vh;
-    background-color: #F3F3E0;
+    background-color: #133E87;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,20 +25,19 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color:#CBDCEB;
 }
 
 section{
     display: flex;
-    background-color: #F3F3E0;
-    width: 100%;
+    background-color: #CBDCEB;
+    width: 70%;
     align-items: center;
     justify-content: center;
 }
 
 #imglogin {
-    width: 50%;
-    height: 90%;
+    width: 100%;
+    height: 50%;
 }
 
 /*Efeito hover no link*/
@@ -59,5 +58,11 @@ button{
     background-color: #608BC1;
     color: #ffff;
     margin: 1rem;
+}
+
+.imgedp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 

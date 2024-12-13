@@ -10,44 +10,31 @@
 </head>
 
 <body>
-    <!-- Div principal que contém todo o conteúdo da página de login -->
-    <div class="container-login">
+    <div class="container">
+        <!-- Imagem do logo -->
+        <img src="imgs/logo.jpg" alt="Logo">
 
-        <!-- Seção da imagem de logo -->
-        <div class="imglogin">
-            <img src="imgs/logo.jpg" id="imglogin" alt="Logo">
-        </div>
-
-        <!-- Seção principal da página com o título e formulário de login -->
-        <main>
+        <section>
             <h1>Login</h1>
-            <p>Seja Bem-Vindo</p>
+            <div class="cadastro">
+                <!-- Formulário para login -->
+                <form action="/server/login.php" method="POST" enctype="multipart/form-data">
 
-            <!-- Formulário de login -->
-            <div class="login">
-                <!-- Formulário que envia os dados para /server/login.php via método POST -->
-                <form action="/server/login.php" method="POST">
-
-                    <!-- Campo para inserir o email -->
+                    <!-- Campo para email -->
                     <label for="email">Email:</label>
                     <input type="email" name="email" required>
 
-                    <!-- Campo para inserir a senha -->
-                    <label for="pwd">Senha:</label>
+                    <!-- Campo para senha -->
+                    <label for="senha">Senha:</label>
                     <input type="password" name="senha" required>
 
-                    <!-- Link para recuperar senha esquecida -->
-                    <a href="esqueceusuasenha.html">Esqueceu sua senha?</a>
-
-                    <!-- Link para a página de tipo de usuário para novos usuários -->
-                    <a href="tipo-usuario.html">É novo por aqui?</a>
-
-                    <!-- Botão de envio do formulário -->
+                    <!-- Botão para enviar o formulário -->
                     <button type="submit">Entrar</button>
                 </form>
             </div>
-        </main>
+        </section>
     </div>
+
 </body>
 
 </html>
