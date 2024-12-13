@@ -85,14 +85,39 @@
                         <h1>Categorias</h1>
                         <div class="categorias">
                             <!-- Categorias de serviços poderiam ser listadas aqui -->
-                             <ul class="categorias-carrossel">
-                                <li class="item-categoria">Encanamento</li>
-                                <li class="item-categoria">Elétrica</li>
-                                <li class="item-categoria">Construção Cíivil</li>
-                                <li class="item-categoria">Marcenaria</li>
-                                <li class="item-categoria">Piscina</li>
-                                <li class="item-categoria">Faxina</li>
-                             </ul>
+                            <ul class="categorias-carrossel">
+                            <?php
+                                $servername = "localhost";
+                                $username = "root";
+                                $password = "usbw";
+                                $dbname = "dados";
+
+                                
+                                $conn = new mysqli($servername, $username, $password, $dbname);
+                                
+                                if ($conn->connect_error) {
+                                    die("Conexão falhou: " . $conn->connect_error);
+                                }
+
+                                $sql = "SELECT id_categoria, nome_categoria FROM categoria";
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<a href='/{$row['id_categoria']}'> <li class='item-categoria'>" . $row["nome_categoria"] . "</li></a>";
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                                // echo "<li class='item-categoria'>Encanamento</li>";
+                                // echo "<li class='item-categoria'>Elétrica</li>";
+                                // echo "<li class='item-categoria'>Construção Cíivil</li>";
+                                // echo "<li class='item-categoria'>Marcenaria</li>";
+                                // echo "<li class='item-categoria'>Piscina</li>";
+                                // echo "<li class='item-categoria'>Faxina</li>";
+                            ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
