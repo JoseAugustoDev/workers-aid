@@ -58,36 +58,32 @@ if ($confirma_senha === $senha) {
             VALUES ($voluntario, $id_categoria, '$descricao')";
 
      if ($conn->query($sql) === TRUE) {
-          echo "Inserido com sucesso!";
-          header("Location: /pages/login.html");
+          $id_profissional = $conn->insert_id;
 
-     } else {
+          foreach ($categorias as $categoria) {
+               $sql_categoria = "SELECT id_categoria FROM categoria WHERE nome_categoria = '$categoria'";
+               $result_categoria = $conn->query($sql_categoria);
+     } 
+     if ($result_categoria->num_rows > 0) {
+                $row_categoria = $result_categoria->fetch_assoc();
+                $id_categoria = $row_categoria["id_categoria"];
+
+                $sql_relacao = "INSERT INTO profissional_categoria (id_profissional, id_categoria) VALUES ($id_profissional, $id_categoria)";
+                if (!$conn->query($sql_relacao)) {
+                    echo "Erro ao associar categoria: " . $conn->error;
+                }
+            } else {
+                echo "Categoria não encontrada: $categoria";
+            }
+        }
+
+        echo "Profissional inserido com sucesso!";
+        header("Location: /pages/login.html");
+          else {
           echo "Erro ao inserir no banco de dados: " . $conn->error;
      }
 } else {
-     echo "As senhas precisam ser iguais.";
-}
-
-$sql2 = "SELECT id_profissional FROM profissional WHERE descricao = '$descricao'";
-$result2 = $conn->query($sql2);
-
-if ($result->num_rows > 0) {
-     $row = $result2->fetch_assoc();
-     $id_profissional = $row["id_profissional"];
-
-     $sql3 = "INSERT INTO clientes (nome, email, senha, endereco, id_situacao) VALUES ('$nome', '$email', '$senha', '$endereco', '$id_profissional')";
-
-     if ($conn->query($sql3) === TRUE) {
-          echo "Inserido com sucesso!";
-          header("Location: /pages/login.html");
-          
-     } else {
-          echo "Erro ao inserir no banco de dados: " . $conn->error;
-     }
-} else {
-     echo "Categoria não encontrada.";
-     $conn->close();
-     exit;
+          echo "As senhas precisam ser iguais.";
 }
 
 $conn->close();
