@@ -25,9 +25,6 @@
                 <ul>
                     <!-- Links de navegação para diferentes páginas do site -->
                     <li class="li">
-                        <a href="/pages/servicos.php">Serviços</a>
-                    </li>
-                    <li class="li">
                         <a href="/pages/login.html">Login</a>
                     </li>
                     <li class="li">

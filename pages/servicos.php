@@ -25,9 +25,6 @@
                 <ul>
                     <!-- Itens do menu -->
                     <li class="li">
-                        <a href="servicos.php">Serviços</a>
-                    </li>
-                    <li class="li">
                         <a href="login.html">Login</a>
                     </li>
                     <li class="li">
