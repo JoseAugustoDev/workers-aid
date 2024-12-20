@@ -25,7 +25,7 @@
                 <ul>
                     <!-- Links de navegação para diferentes páginas do site -->
                     <li class="li">
-                        <a href="/pages/servicos.html">Serviços</a>
+                        <a href="/pages/servicos.php">Serviços</a>
                     </li>
                     <li class="li">
                         <a href="/pages/login.html">Login</a>
@@ -125,7 +125,7 @@
                                 if ($result->num_rows > 0) {
 
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<a href='/{$row['id_categoria']}'> <li class='item-categoria'>" . $row["nome_categoria"] . "</li></a>";
+                                        echo "<a href='/pages/servicos.php?id={$row['id_categoria']}'> <li class='item-categoria'>" . $row["nome_categoria"] . "</li></a>";
                                     }
                                 } else {
                                     echo "Não há nada";
