@@ -1,5 +1,8 @@
 <?php
+// Iniciando a sessão
 session_start();
+
+// Variáveis de conexão com o banco
 $servername = "localhost";
 $username = "root";
 $password = "usbw";
@@ -11,6 +14,7 @@ if (!$conn) {
      die("Falha na conexão: " . mysqli_connect_error());
 }
 
+// Pegando os valores
 $nome = mysqli_real_escape_string($conn, $_POST["nome"]);
 $email = mysqli_real_escape_string($conn, $_POST["email"]);
 $senha = mysqli_real_escape_string($conn, $_POST["senha"]);
@@ -20,6 +24,7 @@ $voluntario = mysqli_real_escape_string($conn, isset($_POST["voluntario"]) ? 1 :
 $categoria = mysqli_real_escape_string($conn, $_POST["servicos"]);
 $descricao = mysqli_real_escape_string($conn, $_POST["desc"]);
 
+// Adicionando foto do perfil e colocando na pasta uploads
 if (isset($_FILES['foto-perfil']) && $_FILES['foto-perfil']['error'] === UPLOAD_ERR_OK) {
      $uploadDir = 'uploads/';
      $fileName = basename($_FILES['foto-perfil']['name']);
@@ -40,6 +45,7 @@ if (isset($_FILES['foto-perfil']) && $_FILES['foto-perfil']['error'] === UPLOAD_
      exit;
 }
 
+// Selecionando as categorias para o profissional poder escolher, por enquanto só pode 1 categoria por profissional
 $sql = "SELECT id_categoria FROM categoria WHERE nome_categoria = '$categoria'";
 $result = $conn->query($sql);
 
@@ -52,6 +58,7 @@ if ($result->num_rows > 0) {
      exit;
 }
 
+// Se a senha for igual, vai criar um usuario comum, com acesso a funcionalidades de um profissional
 if ($confirma_senha === $senha) {
 
      $sql = "INSERT INTO profissional (voluntario, id_categoria, descricao) 

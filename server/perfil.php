@@ -1,7 +1,9 @@
 <?php
 
+// Iniciando a sessão
 session_start();
 
+// Variáveis de conexão com o Banco de Dados
 $servername = "localhost";
 $username = "root";
 $password = "usbw";
@@ -17,6 +19,7 @@ if (!isset($_SESSION['id_cliente'])) {
     die("Sessão não iniciada ou usuário não autenticado.");
 }
 
+// Buscando todas as informações do usuario que esta logado
 $sql = "SELECT * FROM clientes WHERE id_cliente = '{$_SESSION['id_cliente']}'";
 
 $result_cliente = $conn->query($sql);
@@ -32,9 +35,11 @@ if ($result_cliente->num_rows > 0) {
     $_SESSION["id_situacao"] = $usuario["id_situacao"];
 
     if ($_SESSION["id_situacao"] != 0) {
+        // No usário profissional o campo id_situação é o mesmo do id_profissional. Logo, se for diferente de 0 signfica que o usuario é um profissional
         header("Location: /pages/perfil-profissional.php");
-
+        
     }  else {
+        // No usário comum o campo id_situacao é sempre 0
         header("Location: /pages/perfil-cliente.php");
 
     }

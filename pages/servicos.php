@@ -56,7 +56,7 @@
 
             <?php
 
-
+            // Variáveis de conexão com o Banco de Dados
             $servername = "localhost";
             $username = "root";
             $password = "usbw";
@@ -69,6 +69,7 @@
                 die("Conexão falhou: " . $conn->connect_error);
             }
 
+            // Pegando o id da categoria passado na url
             $id_cat = $_GET['id'];
 
             $categoria = "SELECT nome_categoria FROM categoria WHERE id_categoria = $id_cat";
@@ -78,8 +79,6 @@
                 $cate = $resultado->fetch_assoc();
                 $nome_categoria = $cate["nome_categoria"];
             }
-
-
 
             echo "<h1> Precisando de um profissional em $nome_categoria? Veja nossos profissionais destaques em $nome_categoria  </h1>";
 
@@ -113,6 +112,7 @@
                         exit;
                     }
 
+                    // Mostrando na tela todos os resultados de profissionais que utilizam a categoria passada na URL
                     echo "<li>
                                 <div class='img-perfil'>
                                     <img id='foto-servico' src='$foto' alt='imagem_de_perfil'>

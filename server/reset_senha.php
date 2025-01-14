@@ -1,5 +1,6 @@
 <?php
 
+// Variáveis para conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "usbw";
@@ -11,7 +12,7 @@ if (!$conn) {
     die("Falha na conexão: " . mysqli_connect_error());
 }
 
-
+// Pegando os valores
 $email = mysqli_real_escape_string($conn, $_POST["email"]);
 $senha_antiga = mysqli_real_escape_string($conn, $_POST["senhaAntiga"]);
 $senha_nova = mysqli_real_escape_string($conn, $_POST["senhanova"]);
@@ -19,6 +20,7 @@ $confirmacao = mysqli_real_escape_string($conn, $_POST["confirmacaodasenha"]);
 
 if ($senha_nova === $confirmacao) {
 
+    // Validação Básica para alterar a senha
     $usuario_query = "SELECT id_cliente FROM clientes WHERE email = '$email' AND senha = '$senha_antiga'";
     $usuario_result = $conn->query($usuario_query);
 
@@ -27,7 +29,7 @@ if ($senha_nova === $confirmacao) {
         $usuario = $usuario_result->fetch_assoc();
         $id_cliente = $usuario['id_cliente'];
 
-
+        // Utilização do metodo UPDATE para atualizar a senha
         $redefinir_query = "UPDATE clientes SET senha = '$senha_nova' WHERE id_cliente = '$id_cliente'";
         if ($conn->query($redefinir_query) === TRUE) {
             echo "Senha redefinida com sucesso";
