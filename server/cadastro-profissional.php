@@ -14,7 +14,7 @@ if (!$conn) {
      die("Falha na conexão: " . mysqli_connect_error());
 }
 
-// Pegando os valores
+// Pegando os valores do formulário via POST e fazendo a proteção contra injeção SQL
 $nome = mysqli_real_escape_string($conn, $_POST["nome"]);
 $email = mysqli_real_escape_string($conn, $_POST["email"]);
 $senha = mysqli_real_escape_string($conn, $_POST["senha"]);
@@ -24,7 +24,7 @@ $voluntario = mysqli_real_escape_string($conn, isset($_POST["voluntario"]) ? 1 :
 $categoria = mysqli_real_escape_string($conn, $_POST["servicos"]);
 $descricao = mysqli_real_escape_string($conn, $_POST["desc"]);
 
-// Adicionando foto do perfil e colocando na pasta uploads
+// Adicionando foto de perfil e salvando na pasta 'uploads'
 if (isset($_FILES['foto-perfil']) && $_FILES['foto-perfil']['error'] === UPLOAD_ERR_OK) {
      $uploadDir = 'uploads/';
      $fileName = basename($_FILES['foto-perfil']['name']);
@@ -75,9 +75,11 @@ if ($confirma_senha === $senha) {
      echo "As senhas precisam ser iguais.";
 }
 
+// Buscando o ID do profissional que acabou de ser inserido
 $sql2 = "SELECT id_profissional FROM profissional WHERE descricao = '$descricao'";
 $result2 = $conn->query($sql2);
 
+// Verificando se o ID do profissional foi encontrado
 if ($result->num_rows > 0) {
      $row = $result2->fetch_assoc();
      $id_profissional = $row["id_profissional"];
@@ -97,5 +99,6 @@ if ($result->num_rows > 0) {
      exit;
 }
 
+// Fecha a conexão com o banco de dados
 $conn->close();
 ?>

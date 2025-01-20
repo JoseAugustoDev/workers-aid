@@ -15,18 +15,23 @@ if (!$conn) {
     die("Falha na conexao: " . mysqli_connect_error());
 }
 
+// Verificando se o usuário está autenticado na sessão
 if (!isset($_SESSION['id_cliente'])) {
     die("Sessão não iniciada ou usuário não autenticado.");
 }
 
-// Buscando todas as informações do usuario que esta logado
+// Buscando todas as informações do usuário que está logado
 $sql = "SELECT * FROM clientes WHERE id_cliente = '{$_SESSION['id_cliente']}'";
 
+// Executa a consulta no banco para obter informações do cliente
 $result_cliente = $conn->query($sql);
 $result_profissional = $conn->query($sql2);
 
+// Verifica se o cliente foi encontrado
 if ($result_cliente->num_rows > 0) {
-    $usuario = $result_cliente->fetch_assoc();
+    $usuario = $result_cliente->fetch_assoc(); // Obtém os dados do usuário em formato associativo
+
+    // Armazena as informações do usuário na sessão para usá-las posteriormente
     $_SESSION["id_cliente"] = $usuario["id_cliente"];
     $_SESSION["nome"] = $usuario["nome"];
     $_SESSION["email"] = $usuario["email"];
@@ -34,6 +39,7 @@ if ($result_cliente->num_rows > 0) {
     $_SESSION["endereco"] = $usuario["endereco"];
     $_SESSION["id_situacao"] = $usuario["id_situacao"];
 
+    // Verificando se o usuário é profissional
     if ($_SESSION["id_situacao"] != 0) {
         // No usário profissional o campo id_situação é o mesmo do id_profissional. Logo, se for diferente de 0 signfica que o usuario é um profissional
         header("Location: /pages/perfil-profissional.php");
@@ -50,5 +56,6 @@ if ($result_cliente->num_rows > 0) {
     echo "Usuário não encontrado.";
 }
 
+// Fecha a conexão com o banco de dados
 $conn->close();
 ?>
