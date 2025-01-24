@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>ServicÇs</title>
+    <title>Serviços</title>
 </head>
 
 <body>
@@ -112,10 +112,12 @@
                         exit;
                     }
 
+                    $fotoPath = "../server/$foto";
+
                     // Mostrando na tela todos os resultados de profissionais que utilizam a categoria passada na URL
                     echo "<li>
                                 <div class='img-perfil'>
-                                    <img id='foto-servico' src='$foto' alt='imagem_de_perfil'>
+                                    <img id='foto-servico' src='$fotoPath' alt='imagem_de_perfil'>
                                 </div>
                                 <div class='prof-info'>
                                     <p class='nome'>" . $row2['nome'] . "</p>
