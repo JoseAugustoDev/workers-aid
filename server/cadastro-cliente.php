@@ -50,7 +50,7 @@ $situacao_cliente_comum = 0;
 
 // Validação para verificar se as senhas coincidem
 if ($confirma_senha == $senha) {
-    $sql = "INSERT INTO clientes (nome, email, senha, endereco, id_situacao) VALUES ('$nome', '$email', '$senha', '$endereco', '$situacao_cliente_comum')";
+    $sql = "INSERT INTO clientes (nome, email, senha, endereco, foto_perfil, id_situacao) VALUES ('$nome', '$email', '$senha', '$endereco', '$filePath','$situacao_cliente_comum')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Inserido com sucesso";

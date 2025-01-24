@@ -61,8 +61,8 @@ if ($result->num_rows > 0) {
 // Se a senha for igual, vai criar um usuario comum, com acesso a funcionalidades de um profissional
 if ($confirma_senha === $senha) {
 
-     $sql = "INSERT INTO profissional (voluntario, id_categoria, descricao) 
-            VALUES ($voluntario, $id_categoria, '$descricao')";
+     $sql = "INSERT INTO profissional (voluntario, id_categoria, descricao, foto_perfil) 
+            VALUES ($voluntario, $id_categoria, '$descricao', '$filePath')";
 
      if ($conn->query($sql) === TRUE) {
           echo "Inserido com sucesso!";
@@ -84,7 +84,7 @@ if ($result->num_rows > 0) {
      $row = $result2->fetch_assoc();
      $id_profissional = $row["id_profissional"];
 
-     $sql3 = "INSERT INTO clientes (nome, email, senha, endereco, id_situacao) VALUES ('$nome', '$email', '$senha', '$endereco', '$id_profissional')";
+     $sql3 = "INSERT INTO clientes (nome, email, senha, endereco, foto_perfil, id_situacao) VALUES ('$nome', '$email', '$senha', '$endereco', '$filePath', '$id_profissional')";
 
      if ($conn->query($sql3) === TRUE) {
           echo "Inserido com sucesso!";
