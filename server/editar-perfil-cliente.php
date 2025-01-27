@@ -58,37 +58,42 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
-    <link rel="stylesheet" href="css/styleeditarperfil.css">
+    <link rel="stylesheet" href="../pages/css/styleeditarperfil.css">
+
 </head>
 
-<body>
+<body>   
     
-    <h1>Editar Perfil</h1>
-    
-    <section>
-
-        <img id="" src="imgs/logo.jpg" alt="Logo">
-
+    <div class="imgedp">
+        
         <div>
-            <form action="editar-perfil-profissional.php" method="POST">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
-
-                <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
-
-                <button type="submit">Atualizar Perfil</button>
-            </form>
+            <img id="imglogin" src="../pages/imgs/logo.jpg" alt="Logo"> 
         </div>
+        
+        <h1>Editar perfil:</h1>
+
+        <section>
+            
+            <form action="editar-perfil-cliente.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
+
+            <button type="submit">Atualizar Perfil</button>
+        </form>
 
     </section>
-
+    
     <div>
-    <a href="perfil-profissional.php">Voltar para o perfil</a>
+        <a href="perfil-cliente.php">Voltar para o perfil</a>
     </div>
+    </div>
+
 
 </body>
 

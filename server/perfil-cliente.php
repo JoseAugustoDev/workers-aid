@@ -14,7 +14,7 @@ if (!isset($_SESSION['id_cliente'])) {
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/styleperfil.css">
+     <link rel="stylesheet" href="../pages/css/styleperfil.css">
      <title>Perfil Cliente</title>
 </head>
 
@@ -47,7 +47,7 @@ if (!isset($_SESSION['id_cliente'])) {
 
      <div class="edit">
           <a href="editar-perfil-cliente.php">Editar Perfil</a>
-          <a href="/server/logout.php">Sair</a>
+          <a href="logout.php">Sair</a>
           <a href="../index.php">Voltar para página inicial</a>
      </div>
 

@@ -71,7 +71,7 @@
                     
         <!-- Seção de Busca -->
         <form method="POST" action="/server/pesquisar.php" id="buscar">
-            <input type="text" id="buscador" placeholder="buscar"> <!-- Campo de texto para busca -->
+            <input type="text" id="buscador" name="buscador" placeholder="buscar"> <!-- Campo de texto para busca -->
             <button class="pesquisar" type="submit">
                 <!-- Ícone de busca (svg) -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
@@ -122,7 +122,7 @@
                                 if ($result->num_rows > 0) {
 
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<a href='/pages/servicos.php?id={$row['id_categoria']}'> <li class='item-categoria'>" . $row["nome_categoria"] . "</li></a>";
+                                        echo "<a href='/server/servicos.php?id={$row['id_categoria']}'> <li class='item-categoria'>" . $row["nome_categoria"] . "</li></a>";
                                     }
                                 } else {
                                     echo "Não há nada";

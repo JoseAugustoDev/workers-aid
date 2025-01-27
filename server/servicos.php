@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../pages/css/style.css">
     <title>Serviços</title>
 </head>
 
@@ -17,7 +17,7 @@
 
             <!-- Logo do site -->
             <div class="logo">
-                <img src="imgs/Logo.jpg" id="logo" alt="Logo">
+                <img src="../pages/imgs/Logo.jpg" id="logo" alt="Logo">
             </div>
 
             <!-- Começo do menu suspenso -->
@@ -25,30 +25,42 @@
                 <ul>
                     <!-- Itens do menu -->
                     <li class="li">
-                        <a href="login.html">Login</a>
+                        <a href="../pages/login.html">Login</a>
                     </li>
                     <li class="li">
-                        <a href="cadastro-cliente.html">Cadastro</a>
+                        <a href="../pages/tipo-usuario.html">Cadastro</a>
                     </li>
                     <li class="li">
-                        <a href="quemsomos.html">Quem somos</a>
+                        <a href="../pages/quemsomos.html">Quem somos</a>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Seção do perfil do usuário -->
-            <div class="perfil">
-                <form action="/server/perfil.php" method="GET">
-                    <button type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg>
-                    </button>
-                </form>
-            </div>
+            <?php 
+                if (isset($_SESSION['id_cliente'])) {
+                    echo "<form action='/server/perfil.php' method='GET'>
+                            <button type='submit'>
+                                <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor'
+                                    class='bi bi-person-circle' viewBox='0 0 16 16'>
+                                    <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0' />
+                                    <path fill-rule='evenodd'
+                                        d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1' />
+                                </svg>
+                            </button>
+                        </form>
+                        ";
+                } else {
+                    echo "<a href='/pages/login.html'>
+                            <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor'
+                                class='bi bi-person-circle' viewBox='0 0 16 16'>
+                                <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0' />
+                                <path fill-rule='evenodd'
+                                    d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1' />
+                            </svg>
+                        </a>
+                    ";
+                }
+                ?>
         </header>
 
         <!-- Seção principal de conteúdo -->
@@ -112,12 +124,10 @@
                         exit;
                     }
 
-                    $fotoPath = "../server/$foto";
-
                     // Mostrando na tela todos os resultados de profissionais que utilizam a categoria passada na URL
                     echo "<li>
                                 <div class='img-perfil'>
-                                    <img id='foto-servico' src='$fotoPath' alt='imagem_de_perfil'>
+                                    <img id='foto-servico' src='$foto' alt='imagem_de_perfil'>
                                 </div>
                                 <div class='prof-info'>
                                     <p class='nome'>" . $row2['nome'] . "</p>

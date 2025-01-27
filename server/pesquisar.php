@@ -14,12 +14,12 @@
     if (!$conn) {
         die("Falha na conexao: " . mysqli_connect_error());
     }
-    $pesquisar = $_POST('pesquisar');
+    $pesquisar = $_POST['buscador'];
     $result_profissao = "SELECT id_categoria FROM categoria WHERE nome_categoria LIKE '%$pesquisar%' LIMIT 8";
-    $result_profissao = mysqli_query($conn,$result_profissao);
+    $result_profissao = mysqli_query($conn, $result_profissao);
 
-    while ($rows_profisao = mysqli_query($result_profissao)) {
-        echo "nome da profissao:" .$rows_profisao['nome']."<br>";
+    while ($rows_profisao = mysqli_fetch_array($result_profissao)) {
+        echo "id da profissao:" .$rows_profisao['id_categoria']."<br>";
     }
 
 

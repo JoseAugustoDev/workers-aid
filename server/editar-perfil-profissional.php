@@ -58,42 +58,37 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
-    <link rel="stylesheet" href="css/styleeditarperfil.css">
-
+    <link rel="stylesheet" href="../pages/css/styleeditarperfil.css">
 </head>
 
-<body>   
+<body>
     
-    <div class="imgedp">
-        
+    <h1>Editar Perfil</h1>
+    
+    <section>
+
+        <img id="" src="../pages/imgs/logo.jpg" alt="Logo">
+
         <div>
-            <img id="imglogin" src="imgs/logo.jpg" alt="Logo"> 
+            <form action="editar-perfil-profissional.php" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
+
+                <button type="submit">Atualizar Perfil</button>
+            </form>
         </div>
-        
-        <h1>Editar perfil:</h1>
-
-        <section>
-            
-            <form action="editar-perfil-cliente.php" method="POST">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="<?php echo $usuario['email']; ?>" required>
-
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" value="<?php echo $usuario['endereco']; ?>" required>
-
-            <button type="submit">Atualizar Perfil</button>
-        </form>
 
     </section>
-    
-    <div>
-        <a href="perfil-cliente.php">Voltar para o perfil</a>
-    </div>
-    </div>
 
+    <div>
+    <a href="perfil-profissional.php">Voltar para o perfil</a>
+    </div>
 
 </body>
 
