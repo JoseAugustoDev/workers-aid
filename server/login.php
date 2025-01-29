@@ -1,41 +1,39 @@
 <?php
-    // Iniciando a sessão
-    session_start(); 
+session_start();
 
-    // Variáveis de conexão cpm o banco
-    $servername = "localhost";
-    $username = "root";
-    $password = "usbw";
-    $dbname = "dados";
+$servername = "localhost";
+$username = "root";
+$password = "usbw";
+$dbname = "dados";
 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    if (!$conn) {
-        die("Falha na conexao: " . mysqli_connect_error());
-    }
+if (!$conn) {
+    die("Falha na conexao: " . mysqli_connect_error());
+}
 
-   // Pegando os valores de email e senha do formulário via POST
-    $email = mysqli_real_escape_string($conn, $_POST["email"]);
-    $senha = mysqli_real_escape_string($conn, $_POST["senha"]);
+$email = mysqli_real_escape_string($conn, $_POST["email"]);
+$senha = $_POST["senha"]; // Senha não precisa de escape, pois será usada com password_verify
 
- // Consulta SQL para verificar se o email e a senha existem na tabela 'clientes'
-    $sql = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha'";
-    $result = $conn->query($sql);
-    
- // Verificando se existe algum resultado na consulta
-    if ($result->num_rows > 0) {
-        
-        $usuario = $result->fetch_assoc();
+$sql = "SELECT id_cliente, nome, senha FROM clientes WHERE email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $usuario = $result->fetch_assoc();
+    if (password_verify($senha, $usuario['senha'])) {
         $_SESSION["id_cliente"] = $usuario["id_cliente"];
         $_SESSION["nome"] = $usuario["nome"];
-
-          // Se o login for validado, redireciona o usuário para a página principal (index.php)
         header("Location: ../index.php");
-        
     } else {
-        
         echo "Email ou senha incorretos.";
     }
-// Fecha a conexão com o banco de dados
-    $conn->close();
+} else {
+    echo "Email ou senha incorretos.";
+}
+
+$stmt->close();
+$conn->close();
 ?>
