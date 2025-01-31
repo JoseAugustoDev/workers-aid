@@ -15,7 +15,7 @@
         die("Falha na conexao: " . mysqli_connect_error());
     }
     $pesquisar = $_POST['buscador'];
-    $result_profissao = "SELECT id_categoria FROM categoria WHERE MATCH ( nome_categoria ) AGAINST ('$pesquisar' IN BOOLEAN MODE) LIMIT 8;";
+    $result_profissao = "SELECT id_categoria FROM categoria WHERE nome_categoria LIKE '%$pesquisar%' LIMIT 8";
     $result_profissao = mysqli_query($conn, $result_profissao);
 
     while ($rows_profisao = mysqli_fetch_array($result_profissao)) {

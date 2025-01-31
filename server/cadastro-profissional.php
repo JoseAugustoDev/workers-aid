@@ -55,12 +55,12 @@ $result = $conn->query($sql);
 
 // Verifica se a categoria foi encontrada
 if ($result->num_rows > 0) {
-     $row = $result->fetch_assoc(); // Obtém a linha do resultado
-     $id_categoria = $row["id_categoria"]; // Armazena o ID da categoria
+     $row = $result->fetch_assoc(); 
+     $id_categoria = $row["id_categoria"]; 
 } else {
      echo "Categoria não encontrada."; // Exibe erro se a categoria não for encontrada
      $conn->close(); // Fecha a conexão com o banco de dados
-     exit; // Encerra o script
+     exit; 
 }
 
 // Verifica se as senhas coincidem
@@ -71,10 +71,10 @@ if ($confirma_senha === $senha) {
 
      // Executa a query e verifica se foi bem-sucedida
      if ($conn->query($sql) === TRUE) {
-          echo "Inserido com sucesso!"; // Mensagem de sucesso
-          header("Location: /pages/login.html"); // Redireciona para a página de login
+          echo "Inserido com sucesso!";
+          header("Location: /pages/login.html"); 
      } else {
-          echo "Erro ao inserir no banco de dados: " . $conn->error; // Exibe erro se a inserção falhar
+          echo "Erro ao inserir no banco de dados: " . $conn->error; 
      }
 } else {
      echo "As senhas precisam ser iguais."; // Exibe erro se as senhas não coincidirem

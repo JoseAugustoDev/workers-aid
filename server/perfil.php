@@ -42,11 +42,11 @@ if ($result_cliente->num_rows > 0) {
     // Verificando se o usuário é profissional
     if ($_SESSION["id_situacao"] != 0) {
         // No usário profissional o campo id_situação é o mesmo do id_profissional. Logo, se for diferente de 0 signfica que o usuario é um profissional
-        header("Location: /pages/perfil-profissional.php");
+        header("Location: /server/perfil-profissional.php");
         
     }  else {
         // No usário comum o campo id_situacao é sempre 0
-        header("Location: /pages/perfil-cliente.php");
+        header("Location: /server/perfil-cliente.php");
 
     }
 
