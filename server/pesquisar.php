@@ -19,7 +19,7 @@
     $result_profissao = mysqli_query($conn, $result_profissao);
 
     while ($rows_profisao = mysqli_fetch_array($result_profissao)) {
-        echo "id da profissao:" .$rows_profisao['id_categoria']."<br>";
+        header("Location: servicos.php?id={$rows_profisao['id_categoria']}");
     }
 
 

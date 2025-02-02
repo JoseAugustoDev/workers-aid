@@ -42,14 +42,32 @@
 
                          <!-- Seletor de Categoria de Serviços -->
                          <select name="servicos" id="categoria-servicos" required>
-                              <option value="">Selecione a categoria</option>
-                              <option value="Encanamento">Encanamento</option>
-                              <option value="Eletrica">Elétrica</option>
-                              <option value="Construcao Civil">Construção Civil</option>
-                              <option value="Marcenaria">Marcenaria</option>
-                              <option value="Piscina">Piscina</option>
-                              <option value="Faxina">Faxina</option>
-                              <option value="Informatica">Informatica</option>
+                              <option value="">Selecione uma Categoria: </option>
+                              <?php
+                              $servername = "localhost";
+                              $username = "root";
+                              $password = "usbw";
+                              $dbname = "dados";
+
+
+                              $conn = new mysqli($servername, $username, $password, $dbname);
+
+                              if ($conn->connect_error) {
+                                   die("Conexão falhou: " . $conn->connect_error);
+                              }
+
+                              $sql = "SELECT id_categoria, nome_categoria FROM categoria";
+                              $result = $conn->query($sql);
+
+                              if ($result->num_rows > 0) {
+
+                                   while ($row = $result->fetch_assoc()) {
+                                        echo "<option value='$categoria'>" . $row["nome_categoria"] . "</option>";
+                                   }
+                              } else {
+                                   echo "Não há nada";
+                              }
+                              ?>
                          </select>
 
                          <!-- Campo de Descrição do Profissional -->
