@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link para o arquivo CSS de estilo -->
     <link rel="stylesheet" href="../pages/css/style.css">
+    <script src="avaliar.js" defer></script>
     <title>Serviços</title>
 </head>
 
@@ -139,6 +140,17 @@
                         exit;
                     }
 
+                    echo "<dialog class='modal' id='modalAvaliacao' tabindex='-1' role='dialog' aria-labelledby='modalAvaliacao' aria-hidden='true' style='display: none;'>
+                                <p>Qual a sua avaliação para " . $row2["nome"] . "? </p>
+                                <input type='range' name='nota' id='nota' min='1' max='5'>
+
+                                <textarea name='comentarios' id='comentario' rows='8'>
+                                    Deixe seu comentário!
+                                </textarea>
+
+                                <button type='submit'>Enviar</button>
+                            </dialog>";
+
                     // Exibe as informações de cada profissional da categoria
                     echo "<li>
                                 <div class='img-perfil'>
@@ -149,6 +161,10 @@
                                     <p class='email'>" . $row2['email'] . "</p> <!-- Email do profissional -->
                                     <p class='descricao'>" . $row['descricao'] . "</p> <!-- Descrição do serviço -->
                                     <p>" . $voluntario . "</p>  <!-- Informações sobre trabalho voluntário -->
+                                </div>
+                                <div>
+                                    <button onClick='avaliar();'>Avaliar</button>
+                                    <button onClick-'mensagem();'>Enviar Mensagem</button>
                                 </div>
                             </li>";
                 }
