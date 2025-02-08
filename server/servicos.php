@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link para o arquivo CSS de estilo -->
     <link rel="stylesheet" href="../pages/css/style.css">
-    <script src="avaliar.js" defer></script>
+    <script src="js/avaliar.js" defer></script>
     <title>Serviços</title>
 </head>
 
@@ -38,11 +38,11 @@
                 </ul>
             </nav>
 
-            <?php 
-                // Verifica se o usuário está logado (checa a variável de sessão)
-                if (isset($_SESSION['id_cliente'])) {
-                    // Se o usuário estiver logado, mostra o botão para acessar o perfil
-                    echo "<form action='/server/perfil.php' method='GET'>
+            <?php
+            // Verifica se o usuário está logado (checa a variável de sessão)
+            if (isset($_SESSION['id_cliente'])) {
+                // Se o usuário estiver logado, mostra o botão para acessar o perfil
+                echo "<form action='/server/perfil.php' method='GET'>
                             <button type='submit'>
                                 <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor'
                                     class='bi bi-person-circle' viewBox='0 0 16 16'>
@@ -53,9 +53,9 @@
                             </button>
                         </form>
                         ";
-                } else {
-                    // Caso contrário, exibe o ícone que leva à página de login
-                    echo "<a href='/pages/login.html'>
+            } else {
+                // Caso contrário, exibe o ícone que leva à página de login
+                echo "<a href='/pages/login.html'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='currentColor'
                                 class='bi bi-person-circle' viewBox='0 0 16 16'>
                                 <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0' />
@@ -64,8 +64,8 @@
                             </svg>
                         </a>
                     ";
-                }
-                ?>
+            }
+            ?>
         </header>
 
         <!-- Seção principal de conteúdo onde os serviços serão listados -->
@@ -119,6 +119,17 @@
                     // Obtém o id do profissional
                     $id_profissional = $row["id_profissional"];
 
+                    $sqlMedia = "SELECT AVG(nota) as media FROM avaliacao WHERE id_profissional = $id_profissional";
+                    $resultMedia = $conn->query($sqlMedia);
+
+                    // Verifica se a consulta foi bem-sucedida e se retornou um valor válido
+                    if ($resultMedia && $rowMedia = $resultMedia->fetch_assoc()) {
+                        $media = $rowMedia['media'] !== null ? round($rowMedia['media'], 1) : "Sem avaliações";
+                    } else {
+                        $media = "Sem avaliações"; // Caso não haja avaliações ou a consulta falhe
+                    }
+
+
                     // Verifica se o profissional oferece trabalho voluntário ou não
                     $voluntario = "Fornece trabalho voluntário!";
                     if ($row["voluntario"] != 1) {
@@ -132,7 +143,8 @@
                     // Verifica se encontrou o cliente/profissional
                     if ($result2->num_rows > 0) {
                         $row2 = $result2->fetch_assoc();
-                        $foto = $row2["foto_perfil"];  // Obtém a foto de perfil do profissional
+                        $foto = $row2["foto_perfil"]; // Obtém a foto de perfil do profissional
+                        $nome = $row2["nome"];
                     } else {
                         // Se o profissional não for encontrado, exibe uma mensagem de erro e fecha a conexão
                         echo "Profissional não encontrado.";
@@ -140,41 +152,46 @@
                         exit;
                     }
 
-                    echo "<dialog class='modal' id='modalAvaliacao' tabindex='-1' role='dialog' aria-labelledby='modalAvaliacao' aria-hidden='true' style='display: none;'>
-                                <p>Qual a sua avaliação para " . $row2["nome"] . "? </p>
-                                <input type='range' name='nota' id='nota' min='1' max='5'>
-
-                                <textarea name='comentarios' id='comentario' rows='8'>
-                                    Deixe seu comentário!
-                                </textarea>
-
-                                <button type='submit'>Enviar</button>
-                            </dialog>";
 
                     // Exibe as informações de cada profissional da categoria
                     echo "<li>
-                                <div class='img-perfil'>
+                    <div class='img-perfil'>
                                     <img id='foto-servico' src='$foto' alt='imagem_de_perfil'>
                                 </div>
                                 <div class='prof-info'>
                                     <p class='nome'>" . $row2['nome'] . "</p>  <!-- Nome do profissional -->
                                     <p class='email'>" . $row2['email'] . "</p> <!-- Email do profissional -->
                                     <p class='descricao'>" . $row['descricao'] . "</p> <!-- Descrição do serviço -->
+                                    <p class='avaliacao'> Avaliação média: " . ($media !== "Sem avaliações" ? $media . " ⭐" : "Sem avaliações") . "</p>
+
                                     <p>" . $voluntario . "</p>  <!-- Informações sobre trabalho voluntário -->
                                 </div>
                                 <div>
-                                    <button onClick='avaliar();'>Avaliar</button>
-                                    <button onClick-'mensagem();'>Enviar Mensagem</button>
+                                <button onClick='abrirModal($id_profissional)'>Avaliar</button>
+                                <button onClick-'mensagem()'>Enviar Mensagem</button>
                                 </div>
-                            </li>";
+                                </li>";
+
+                    echo "<dialog class='modal' id='modalAvaliacao_$id_profissional' style='display: none;'>
+                            <p>Qual a sua avaliação para $nome?</p>
+                            <label for='nota_$id_profissional'>Nota (1 a 5):</label>
+                            <input type='number' name='nota' id='nota_$id_profissional' min='1' max='5'>
+
+                            <textarea name='comentarios' id='comentario_$id_profissional' rows='5' placeholder='Deixe seu comentário!'></textarea>
+
+                            <button type='button' onClick='enviarAvaliacao($id_profissional)'>Enviar</button>
+                        </dialog>";
+
+
                 }
+
             } else {
                 // Caso não haja profissionais, exibe uma mensagem de "não há nada"
                 echo "Não há nada";
             }
             ?>
             </ul>
-        </div>
+    </div>
     </section>
 
 </body>
