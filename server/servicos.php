@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link para o arquivo CSS de estilo -->
     <link rel="stylesheet" href="../pages/css/style.css">
-    <script src="js/avaliar.js" defer></script>
+    <script src="js/script.js" defer></script>
     <title>Serviços</title>
 </head>
 
@@ -39,6 +39,7 @@
             </nav>
 
             <?php
+            session_start();
             // Verifica se o usuário está logado (checa a variável de sessão)
             if (isset($_SESSION['id_cliente'])) {
                 // Se o usuário estiver logado, mostra o botão para acessar o perfil
@@ -72,6 +73,7 @@
         <section>
 
             <?php
+            
 
             // Variáveis para a conexão com o banco de dados
             $servername = "localhost";
@@ -168,7 +170,7 @@
                                 </div>
                                 <div>
                                 <button onClick='abrirModal($id_profissional)'>Avaliar</button>
-                                <button onClick-'mensagem()'>Enviar Mensagem</button>
+                                <button onClick='abrirModalMensagem($id_profissional)'>Enviar Mensagem</button>
                                 </div>
                                 </li>";
 
@@ -180,7 +182,15 @@
                             <textarea name='comentarios' id='comentario_$id_profissional' rows='5' placeholder='Deixe seu comentário!'></textarea>
 
                             <button type='button' onClick='enviarAvaliacao($id_profissional)'>Enviar</button>
+                            <button type='button' onClick='fecharModal($id_profissional)'>Fechar</button>
                         </dialog>";
+
+                    echo "<dialog class='modal' id='modalMensagem_$id_profissional' style='display: none;'>
+                                <p>Escreva sua mensagem para $nome:</p>
+                                <textarea id='mensagem_$id_profissional' rows='5' placeholder='Digite sua mensagem...'></textarea>
+                                <button type='button' onClick='enviarMensagem($id_profissional)'>Enviar</button>
+                                <button type='button' onClick='fecharModalMensagem($id_profissional)'>Fechar</button>
+                            </dialog>";
 
 
                 }
