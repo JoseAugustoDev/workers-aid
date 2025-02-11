@@ -11,12 +11,12 @@ session_start();
     <link rel="stylesheet" href="/pages/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Trabalho Final</title> <!-- Título da página que aparece na aba do navegador -->
+    <title>Workers Aid</title>
 </head>
 
 <body>
     <div class="container-fluid bg-info min-vh-100">
-        <header class="d-flex bg-info justify-content-between align-items-center w-100 p-3 border-bottom vh-25">
+        <header class="d-flex justify-content-between align-items-center w-100 p-3 border-bottom vh-25">
             <!-- Seção de Cabeçalho (Logo e Menu de Navegação) -->
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <div class="container-fluid d-flex justify-content-center align-items-center w-100">
@@ -78,8 +78,8 @@ session_start();
         <section class="w-100 d-flex justify-content-center align-items-center vh-50">
             <form method="POST" action="/server/pesquisar.php" id="buscar"
                 class="w-100 h-10 p-3 m-3 input-group d-flex justify-content-center">
-                <input type="text" class="input-group-text w-50 bg-white" id="buscador" name="buscador"
-                    placeholder="buscar"> <!-- Campo de texto para busca -->
+                <input type="text" class="input-group-text w-50 bg-white p-3" id="buscador" name="buscador"
+                    placeholder="Buscar por categoria"> <!-- Campo de texto para busca -->
 
                 <button class="btn btn-outline-dark" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -200,7 +200,7 @@ session_start();
         </section>
 
         <!-- Rodapé -->
-        <footer class="d-flex justify-content-center align-items-center border-top w-100">
+        <footer class="d-flex justify-content-center align-items-center border-top w-100 bg-info">
             <p>Todos os direitos reservados</p>
         </footer>
     </div>
