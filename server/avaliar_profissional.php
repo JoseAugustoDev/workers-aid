@@ -30,5 +30,12 @@ if ($conn->query($sql) === TRUE) {
      echo "Erro ao enviar avaliação: " . $conn->error;
 }
 
+$avaliacao = "UPDATE avaliacao SET avaliacao = $nota WHERE id_profissional = $id_profissional";
+if ($conn->query($avaliacao) === TRUE) {
+     echo "Avaliação enviada com sucesso!";
+} else {
+     echo "Erro ao enviar avaliação: " . $conn->error;
+}
+
 $conn->close();
 ?>
