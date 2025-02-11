@@ -30,12 +30,23 @@ if ($conn->query($sql) === TRUE) {
      echo "Erro ao enviar avaliação: " . $conn->error;
 }
 
-$avaliacao = "UPDATE avaliacao SET avaliacao = $nota WHERE id_profissional = $id_profissional";
+$sqlMedia = "SELECT AVG(nota) as media FROM avaliacao WHERE id_profissional = $id_profissional";
+$resultMedia = $conn->query($sqlMedia);
+
+// Verifica se a consulta foi bem-sucedida e se retornou um valor válido
+if ($resultMedia && $rowMedia = $resultMedia->fetch_assoc()) {
+     $media = $rowMedia['media'] !== null ? round($rowMedia['media'], 1) : "Sem avaliações";
+} else {
+     $media = "Sem avaliações"; // Caso não haja avaliações ou a consulta falhe
+}
+
+$avaliacao = "UPDATE profissional SET avaliacao = $media WHERE id_profissional = $id_profissional";
 if ($conn->query($avaliacao) === TRUE) {
      echo "Avaliação enviada com sucesso!";
 } else {
      echo "Erro ao enviar avaliação: " . $conn->error;
 }
+
 
 $conn->close();
 ?>

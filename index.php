@@ -22,7 +22,9 @@ session_start();
                 <div class="container-fluid d-flex justify-content-center align-items-center w-100">
 
                     <div class="navbar-brand">
-                        <img width="125px" height="125px" class="rounded-circle" src="/pages/imgs/Logo.jpg" id="logo" alt="Logo">
+                        <a href="../index.php">
+                            <img width="125px" height="125px" class="rounded-circle" src="/pages/imgs/Logo.jpg" id="logo" alt="Logo">
+                        </a>
                     </div>
 
                     <!-- Barra de Navegação -->
