@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* Estilo para a descrição */
 .descricao {
     border: 1px solid black;
@@ -12,6 +17,10 @@ section {
     width: 100%;
 }
 
+.descricao p {
+    text-justify: distribute;
+}
+
 /* Estilo para o título e h1 */
 .titulo_info, h1 {
     text-decoration: none;
@@ -23,7 +32,13 @@ section {
 /* Reset de estilo para todos os elementos */
 * {
     background-color: #CBDCEB;
-    margin: 5rem;
+    margin: 4rem
+}
+
+.voltar {
+    display: flex;
+    font-weight: bolder;
+    justify-content: space-between;
 }
 
 /* Estilo para o link "voltar" */
