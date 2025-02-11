@@ -3,35 +3,36 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/pages/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Trabalho Final</title> <!-- Título da página que aparece na aba do navegador -->
 </head>
 
-<body>
-    <div class="tela_principal">
-        <header>
+<body class="bg-primary">
+    <div class="container bg-info">
+        <header class="d-flex bg-info justify-content-between align-items-center w-100 p-3 border-bottom">
             <!-- Seção de Cabeçalho (Logo e Menu de Navegação) -->
             <div class="logo">
-                <img src="/pages/imgs/Logo.jpg" id="logo" alt="Logo"> <!-- Exibe a imagem do logo -->
+                <img width="125px" height="125px" class="rounded-circle" src="/pages/imgs/Logo.jpg" id="logo" alt="Logo"> <!-- Exibe a imagem do logo -->
             </div>
 
             <!-- Barra de Navegação -->
             <nav class="menu_suspenso">
-                <ul>
+                <ul class="d-flex align-items-center justify-content-between list-group-horizontal">
                     <!-- Links de navegação para diferentes páginas do site -->
-                    <li class="li">
-                        <a href="/pages/login.html">Login</a>
+                    <li class="list-group-item rounded-pill">
+                        <a class="text-decoration-none" href="/pages/login.html">Login</a>
                     </li>
-                    <li class="li">
-                        <a href="/pages/tipo-usuario.html">Cadastro</a>
+                    <li class="list-group-item rounded-pill">
+                        <a class="text-decoration-none" href="/pages/tipo-usuario.html">Cadastro</a>
                     </li>
-                    <li class="li">
-                        <a href="/pages/quemsomos.html">Quem somos</a>
+                    <li class="list-group-item rounded-pill">
+                        <a class="text-decoration-none" href="/pages/quemsomos.html">Quem somos</a>
                     </li>
                 </ul>
             </nav>
@@ -69,79 +70,77 @@
         </header>
         <!-- Fim do cabeçalho -->
                     
+        <section class="w-100 d-flex justify-content-center align-items-center">
+            <form method="POST" action="/server/pesquisar.php" id="buscar" class="w-100 h-10 p-3 input-group d-flex justify-content-center">
+                <input type="text" class="input-group-text w-50 bg-white" id="buscador" name="buscador" placeholder="buscar"> <!-- Campo de texto para busca -->
+
+                <button class="btn btn-outline-dark" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                </button>
+             </form>
+        </section>
         <!-- Seção de Busca -->
-        <form method="POST" action="/server/pesquisar.php" id="buscar">
-            <input type="text" id="buscador" name="buscador" placeholder="buscar"> <!-- Campo de texto para busca -->
-            <button class="pesquisar" type="submit">
-                <!-- Ícone de busca (svg) -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
-                    class="bi bi-search-heart-fill" viewBox="0 0 16 16">
-                    <path
-                        d="M6.5 13a6.47 6.47 0 0 0 3.845-1.258h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1A6.47 6.47 0 0 0 13 6.5 6.5 6.5 0 0 0 6.5 0a6.5 6.5 0 1 0 0 13m0-8.518c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018" />
-                </svg>
-            </button>
-         </form>
 
         <!-- Seção de Imagem Principal e Texto -->
         <section>
-            <div class="principal">
+            <div class="container d-flex justify-content-center align-items-center flex-column p-2">
                 <div class="imagem_tela_principal">
-                    <img src="/pages/imgs/imagem_principal.png" alt="serviços"> <!-- Imagem de destaque -->
+                    <!-- <img src="/pages/imgs/imagem_principal.png" alt="serviços"> Imagem de destaque -->
                 </div>
 
-                <div class="secundaria">
-                    <div class="texto-secundaria">
-                        <p>
-                            Transformando conexões em soluções: somos uma empresa dedicada a criar pontes entre
-                            profissionais e pessoas, oferecendo serviços de qualidade com inovação, confiança e
-                            compromisso. Nosso propósito é simplificar a vida de nossos clientes, proporcionando acesso
-                            fácil e rápido a especialistas em diversas áreas.
-                        </p>
-                    </div>
-                    <div class="servicos">
-                        <h1>Categorias</h1>
-                        <div class="categorias">
-                            <!-- Categorias de serviços poderiam ser listadas aqui -->
-                            <ul class="categorias-carrossel">
-                            <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "usbw";
-                                $dbname = "dados";
+                <h1>Categorias</h1>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <!-- Categorias de serviços poderiam ser listadas aqui -->
+                        <ul class="d-flex align-items-center justify-content-between list-group-horizontal">
+                        <?php
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "usbw";
+                            $dbname = "dados";
 
-                                
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-                                
-                                if ($conn->connect_error) {
-                                    die("Conexão falhou: " . $conn->connect_error);
+                            
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+                            
+                            if ($conn->connect_error) {
+                                die("Conexão falhou: " . $conn->connect_error);
+                            }
+
+                            $sql = "SELECT id_categoria, nome_categoria FROM categoria";
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<a href='/server/servicos.php?id={$row['id_categoria']}' class='text-decoration-none'> <li class='p-2 m-2 item-categoria list-group-item rounded-pill'>" . $row["nome_categoria"] . "</li></a>";
                                 }
-
-                                $sql = "SELECT id_categoria, nome_categoria FROM categoria";
-                                $result = $conn->query($sql);
-
-                                if ($result->num_rows > 0) {
-
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<a href='/server/servicos.php?id={$row['id_categoria']}'> <li class='item-categoria'>" . $row["nome_categoria"] . "</li></a>";
-                                    }
-                                } else {
-                                    echo "Não há nada";
-                                }
-                            ?>
-                            </ul>
-                        </div>
+                            } else {
+                                echo "Não há nada";
+                            }
+                        ?>
+                        </ul>
                     </div>
+                </div>
+                <div class="texto-secundaria">
+                    <p>
+                        Transformando conexões em soluções: somos uma empresa dedicada a criar pontes entre
+                        profissionais e pessoas, oferecendo serviços de qualidade com inovação, confiança e
+                        compromisso. Nosso propósito é simplificar a vida de nossos clientes, proporcionando acesso
+                        fácil e rápido a especialistas em diversas áreas.
+                    </p>
                 </div>
 
             </div>
 
             <!-- Seção de Feedback -->
-            <div class="feedback">
+            <div class="d-flex justify-content-center align-items-center flex-column">
                 <div class="titulo-feedback">
                     <h1>Feedback</h1> <!-- Título para a seção de feedback -->
                 </div>
 
-                <div class="conteudo-feedback">
+                <div class="d-flex">
                     <!-- Depoimentos de clientes sobre o serviço -->
                     <p>"Estou muito satisfeito com a plataforma! Ela facilitou meu trabalho e ainda me proporcionou a
                         chance de ajudar ONGs com meu trabalho voluntário."</p>
@@ -161,7 +160,7 @@
         </section>
 
         <!-- Rodapé -->
-        <footer>
+        <footer class="d-flex justify-content-center align-items-center border-top">
             <p>Todos os direitos reservados</p> <!-- Texto de direitos autorais -->
         </footer>
     </div>
