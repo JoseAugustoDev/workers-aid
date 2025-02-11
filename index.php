@@ -23,12 +23,14 @@ session_start();
 
                     <div class="navbar-brand">
                         <a href="../index.php">
-                            <img width="125px" height="125px" class="rounded-circle" src="/pages/imgs/Logo.jpg" id="logo" alt="Logo">
+                            <img width="125px" height="125px" class="rounded-circle" src="/pages/imgs/Logo.jpg"
+                                id="logo" alt="Logo">
                         </a>
                     </div>
 
                     <!-- Barra de Navegação -->
-                    <ul class="navbar-nav d-flex align-items-center justify-content-evenly list-group-horizontal collapse navbar-collapse w-50">
+                    <ul
+                        class="navbar-nav d-flex align-items-center justify-content-evenly list-group-horizontal collapse navbar-collapse w-50">
                         <!-- Links de navegação para diferentes páginas do site -->
                         <li class="nav-item list-group-item rounded border border-dark">
                             <a class="text-decoration-none" href="/pages/login.html">Login</a>
@@ -97,7 +99,7 @@ session_start();
         <!-- Seção de Imagem Principal e Texto -->
         <section>
             <div class="container-fluid d-flex justify-content-center align-items-center flex-column p-2">
-                
+
                 <div class="d-flex align-items-center justify-content-center w-100 p-2 flex-column m-4">
                     <h1>Categorias</h1>
                     <!-- Categorias de serviços poderiam ser listadas aqui -->
@@ -179,22 +181,44 @@ session_start();
             <!-- Seção de Feedback -->
             <div class="d-flex justify-content-center align-items-center flex-column m-4">
                 <div class="mb-3">
-                    <h1>Feedback</h1> <!-- Título para a seção de feedback -->
+                    <h1>Feedback dos Usuários</h1> <!-- Título para a seção de feedback -->
                 </div>
 
                 <div class="d-flex m-1">
-                    <!-- Depoimentos de clientes sobre o serviço -->
-                    <p>"Estou muito satisfeito com a plataforma! Ela facilitou meu trabalho e ainda me proporcionou a
-                        chance de ajudar ONGs com meu trabalho voluntário."</p>
-                    <hr>
-                    <p>"Encontrei os melhores mecânicos na plataforma! O serviço foi rápido, eficiente e com um
-                        atendimento impecável. Fiquei impressionado com a qualidade e profissionalismo. Sem dúvida, é a
-                        melhor opção para quem busca confiança e excelência."</p>
-                    <hr>
-                    <p>"Precisei de um técnico de TI para montar meu PC e encontrei o profissional perfeito através da
-                        plataforma. O atendimento foi excelente, o serviço foi feito com precisão e rapidez, e meu
-                        computador está funcionando perfeitamente. Recomendo a todos que buscam qualidade e confiança!"
-                    </p>
+                    <?php
+
+                    // Conectar ao banco de dados
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "usbw";
+                    $dbname = "dados";
+
+
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    if ($conn->connect_error) {
+                        die("Erro na conexão: " . $conn->connect_error);
+                    }
+
+                    $sql = "SELECT comentario, nota FROM feedback fb
+                    WHERE fb.positiva = 1
+                    ORDER BY fb.nota DESC
+                    LIMIT 3";
+
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+
+                            echo "<p class='list-group-item rounded w-10 m-1'><b>" . $row["comentario"] . "</b><br>
+                                  " . $row["nota"] . "⭐  
+                            
+                            
+                            </p>";
+                        }
+                    }
+
+                    ?>
+
                 </div>
 
             </div>

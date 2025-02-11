@@ -31,7 +31,7 @@ $recomendar = isset($_POST["recomendar"]) && $_POST["recomendar"] == '1' ? 1 : 0
 $avaliacao_negativa = 0;
 $avaliacao_positiva = 1;
 
-$tipo_avaliacao = ($recomendar == 1 && $nota >= 4) || $nota == 5 ? $avaliacao_positiva : $avaliacao_negativa;
+$tipo_avaliacao = ($recomendar == 1) || $nota >= 4 ? $avaliacao_positiva : $avaliacao_negativa;
 
 // Query preparada para evitar SQL Injection
 $sql = "INSERT INTO feedback (id_cliente, comentario, nota, positiva) VALUES (?, ?, ?, ?)";

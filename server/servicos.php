@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -166,7 +166,7 @@
                     // Exibe as informações de cada profissional da categoria
                     echo "<li class='d-flex justify-content-between align-items-center p-3 m-3 list-group-item border border-dark w-100 rounded'>
                             <div class='img-perfil'>
-                                <img id='foto-servico' src='$foto' alt='imagem_de_perfil'>
+                                <img width='125' height='125' id='foto-servico' src='$foto' alt='imagem_de_perfil'>
                             </div>
                             <div class='prof-info'>
                                 <p class='nome'>" . $row2['nome'] . "</p>  <!-- Nome do profissional -->
