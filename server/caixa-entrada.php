@@ -28,69 +28,76 @@ $id_cliente = $_SESSION['id_cliente'];
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
      <title>Caixa de Entrada</title>
-     <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
-<body>
+<body class="bg-info p-3 mb-2 bg-primary text-white">
+     <div class="container justify-content-center align-items-center w-50 p-3 text-center vh-100">
 
-     <h1>Caixa de Entrada</h1>
-     <table border="1">
-          <tr>
-               <th>Remetente</th>
-               <th>Mensagem</th>
-               <th>Ação</th>
-          </tr>
+          <h1>Caixa de Entrada</h1>
 
-          <?php
+          <table class="table">
+               <tr>
+                    <th scope="col">Remetente</th>
+                    <th scope="col">Mensagem</th>
+                    <th scope="col">Ação</th>
+               </tr>
 
-          $get_profissional = "SELECT nome, id_situacao FROM clientes WHERE id_cliente = $id_cliente";
-          $result_prof = $conn-> query($get_profissional);
+               <?php
 
-          if ($result_prof->num_rows > 0) {
-               while ($row = $result_prof->fetch_assoc()) {
+               $get_profissional = "SELECT nome, id_situacao FROM clientes WHERE id_cliente = $id_cliente";
+               $result_prof = $conn->query($get_profissional);
 
-                    $id_profissional = $row["id_situacao"];
+               if ($result_prof->num_rows > 0) {
+                    while ($row = $result_prof->fetch_assoc()) {
+
+                         $id_profissional = $row["id_situacao"];
+                    }
                }
-          }
 
-          // Consulta para buscar mensagens recebidas pelo cliente
-          $sql = "SELECT * FROM mensagem WHERE id_profissional = $id_profissional";
+               // Consulta para buscar mensagens recebidas pelo cliente
+               $sql = "SELECT * FROM mensagem WHERE id_profissional = $id_profissional";
 
-          $result = $conn->query($sql);
+               $result = $conn->query($sql);
 
-          if (!$result) {
-               die("Erro na consulta SQL: " . $conn->error);
-          }
+               if (!$result) {
+                    die("Erro na consulta SQL: " . $conn->error);
+               }
 
-          if ($result->num_rows > 0) {
-               while ($row = $result->fetch_assoc()) {
+               if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
 
-                    $id_remetente = $row["id_cliente"];
+                         $id_remetente = $row["id_cliente"];
 
-                    $sql_nome_remetente = "SELECT nome FROM clientes WHERE id_cliente = $id_remetente";
-                    $result2 = $conn->query($sql_nome_remetente);
+                         $sql_nome_remetente = "SELECT nome FROM clientes WHERE id_cliente = $id_remetente";
+                         $result2 = $conn->query($sql_nome_remetente);
 
-                    if ($result2->num_rows > 0) {
-                         while ($row2 = $result2->fetch_assoc()) {
-                              $nome_remetente = $row2["nome"];
+                         if ($result2->num_rows > 0) {
+                              while ($row2 = $result2->fetch_assoc()) {
+                                   $nome_remetente = $row2["nome"];
+
+                              }
 
                          }
 
-                    }
-
-                    echo "<tr>
+                         echo "<tr>
                               <td>" . $nome_remetente . "</td>
                               <td>" . substr($row['mensagem'], 0, 50) . "...</td>
                               <td><a href='visualizar-mensagem.php?id=" . $row['id_mensagem'] . "'>Abrir</a></td>
                          </tr>";
-               }    
-          } else {
-               echo "<tr><td colspan='3'>Nenhuma mensagem recebida.</td></tr>";
-          }
-          ?>
-     </table>
+                    }
+               } else {
+                    echo "<tr><td colspan='3'>Nenhuma mensagem recebida.</td></tr>";
+               }
+               ?>
+          </table>
+     </div>
 
+     <button class="btn btn-dark text-white float-right fixed-bottom">
+          <a href="/server/perfil-profissional.php" class="color-light">Voltar</a>
+     </button>
 </body>
 
 </html>

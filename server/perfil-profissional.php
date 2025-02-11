@@ -67,12 +67,14 @@ if ($result2->num_rows > 0) {
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
      <!-- Inclui o arquivo CSS para estilizar a página -->
      <link rel="stylesheet" href="../pages/css/styleperfil.css">
      <title>Perfil Cliente</title>
 </head>
 
-<body>
+<body class="bg-info">
      <!-- Exibe uma saudação para o usuário, utilizando o nome armazenado na variável de sessão 'nome' -->
      <div>
           <h1>Olá,
@@ -110,9 +112,10 @@ if ($result2->num_rows > 0) {
 
      <!-- Links para o usuário editar o perfil, fazer logout ou voltar à página inicial -->
      <div class="edit">
-          <a href="editar-perfil-profissional.php">Editar Perfil</a>
-          <a href="logout.php">Sair</a>
-          <a href="../index.php">Voltar para página inicial</a>
+          <a href="caixa-entrada.php" class="text-dark">Caixa de Mensagens</a>
+          <a href="editar-perfil-profissional.php" class="text-dark">Editar Perfil</a>
+          <a href="logout.php" class="text-dark">Sair</a>
+          <a href="../index.php" class="text-dark">Voltar para página inicial</a>
      </div>
      
 </body>

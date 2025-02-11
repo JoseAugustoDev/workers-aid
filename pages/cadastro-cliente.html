@@ -13,50 +13,17 @@
 <body class="bg-info p-3 mb-2 bg-primary text-white">
 
     <div class="container justify-content-center align-items-center w-50 p-3 text-center vh-100 ">
-        <!-- Imagem do logo 
-        <img src="imgs/logo.jpg" alt="Logo">-->
+ 
         <h1 class="text-center">Cadastro</h1>
-        <img src="imgs/logo.jpg" class="rounded-circle w-50 p-5" alt="Logo">
-
-        <!-- Campo para nome do usuário -->
-        <!-- <label for="text">Nome:</label>
-                    <input type="text" name="nome" required>
- -->
-        <!-- Campo para email -->
-        <!-- <label for="email">Email:</label>
-                    <input type="email" name="email" required> -->
-
-        <!-- Campo para senha -->
-        <!-- <label for="senha">Senha:</label>
-                    <input type="password" name="senha" required> -->
-
-        <!-- Campo para confirmar a senha -->
-        <!-- <label for="senha-confirma">Confirme a Senha:</label>
-                    <input type="password" name="senha-confirma" required> -->
-
-        <!-- Campo para endereço -->
-        <!-- <label for="text">Endereço:</label>
-                    <input type="text" name="endereco" required> -->
-
-        <!-- Campo para adicionar foto de perfil -->
-        <!-- <label for="foto-perfil">Adicionar Foto de Perfil:
-                        <input type="file" name="foto-perfil" id="foto-perfil">
-                    </label> -->
-
-        <!-- Botão para enviar o formulário -->
-        <!-- <button type="submit">Cadastrar</button>
-                </form> -->
-
-
-
-
-
+        <img src="imgs/logo.jpg" class="rounded-circle w-50 p-5" width="275" height="400" alt="Logo">
 
         <form action="/server/cadastro-cliente.php" method="POST" enctype="multipart/form-data ">
 
+            <label for="nome" class="form-label"><b>Nome</b></label>
+            <input type="text" class="form-control container-center" name="nome" required>
+
             <label for="email" class="form-label"><b>Email</b></label>
             <input type="email" class="form-control container-center" name="email" required>
-
 
             <label for="senha" class="form-label"><b>senha</b></label>
             <input type="password" class="form-control" name="senha" required>
@@ -64,19 +31,13 @@
             <label for="senha-confirma" class="form-label"><b>Confirme a Senha</b></label>
             <input type="password" class="form-control" name="senha-confirma" required>
 
-            <label for="text" class="form-label"><b>Endereço</b></label>
-            <input type="text" class="form-control container-center" name="enderecoz" required>
-
-
-            <label for="foto-perfil" class="form-label">Adicionar Foto de Perfil</label>
-            <input class="form-control" type="file" name="foto-perfil" id="foto-perfil" multiple>
+            <label for="endereco" class="form-label"><b>Endereço</b></label>
+            <input type="text" class="form-control container-center" name="endereco" required>
 
 
             <button type="submit" class="btn btn-primary w-25 p-2 align-text-bottom mt-3">Cadastrar</button>
         </form>
 
-    </div>
-    </section>
     </div>
 </body>
 

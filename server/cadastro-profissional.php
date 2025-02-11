@@ -66,8 +66,8 @@ if ($result->num_rows > 0) {
 // Verifica se as senhas coincidem
 if ($confirma_senha === $senha) {
      // Insere os dados do profissional na tabela 'profissional'
-     $sql = "INSERT INTO profissional (voluntario, id_categoria, descricao, foto_perfil) 
-            VALUES ($voluntario, $id_categoria, '$descricao', '$filePath')";
+     $sql = "INSERT INTO profissional (voluntario, id_categoria, descricao) 
+            VALUES ($voluntario, $id_categoria, '$descricao')";
 
      // Executa a query e verifica se foi bem-sucedida
      if ($conn->query($sql) === TRUE) {
