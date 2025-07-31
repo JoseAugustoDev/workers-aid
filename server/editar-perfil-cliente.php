@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_cliente'])) {
 $servername = "localhost"; // Endereço do servidor
 $username = "root";        // Nome de usuário do banco de dados
 $password = "usbw";        // Senha do banco de dados
-$dbname = "dados";         // Nome do banco de dados
+$dbname = "capix_db";         // Nome do banco de dados
 
 // Conecta ao banco de dados
 $conn = mysqli_connect($servername, $username, $password, $dbname);

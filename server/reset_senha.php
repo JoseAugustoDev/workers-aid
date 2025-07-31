@@ -4,7 +4,7 @@
 $servername = "localhost";  // Nome do servidor do banco de dados
 $username = "root";         // Usuário do banco de dados
 $password = "usbw";         // Senha do banco de dados
-$dbname = "dados";          // Nome do banco de dados
+$dbname = "capix_db";          // Nome do banco de dados
 
 // Conexão com o banco de dados
 $conn = mysqli_connect($servername, $username, $password, $dbname);
