@@ -10,7 +10,7 @@ if (isset($_SESSION['id_cliente'])) {
 $servername = "localhost";
 $username = "root";
 $password = "usbw";
-$dbname = "dados";
+$dbname = "capix_db";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {

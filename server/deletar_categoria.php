@@ -6,7 +6,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "usbw";
-$dbname = "dados";
+$dbname = "capix_db";
 
 // Conectando ao banco de dados
 $conn = mysqli_connect($servername, $username, $password, $dbname);

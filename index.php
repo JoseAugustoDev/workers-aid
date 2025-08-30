@@ -108,7 +108,7 @@ session_start();
                         $servername = "localhost";
                         $username = "root";
                         $password = "usbw";
-                        $dbname = "dados";
+                        $dbname = "capix_db";
 
 
                         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -142,7 +142,7 @@ session_start();
                         $servername = "localhost";
                         $username = "root";
                         $password = "usbw";
-                        $dbname = "dados";
+                        $dbname = "capix_db";
 
 
                         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -191,7 +191,7 @@ session_start();
                     $servername = "localhost";
                     $username = "root";
                     $password = "usbw";
-                    $dbname = "dados";
+                    $dbname = "capix_db";
 
 
                     $conn = new mysqli($servername, $username, $password, $dbname);

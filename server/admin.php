@@ -5,7 +5,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] != 1) {
      exit();
 }
 
-$conn = new mysqli("localhost", "root", "usbw", "dados");
+$conn = new mysqli("localhost", "root", "usbw", "capix_db");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      if (isset($_POST['add_category'])) {
